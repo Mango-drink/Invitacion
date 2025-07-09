@@ -6,101 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mis XV Años - Ximena</title>
 
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600;700&display=swap"
         rel="stylesheet">
 
-    <!-- AOS (Animate On Scroll) Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    <style>
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: #f0f4f8;
-            /* Un gris azulado muy claro */
-        }
-
-        .font-great-vibes {
-            font-family: 'Great Vibes', cursive;
-        }
-
-        .hero-bg {
-            background-image: linear-gradient(rgba(25, 25, 112, 0.7), rgba(0, 0, 126, 0.8)), url('https://placehold.co/1200x800/e0e0e0/ffffff?text=Ximena');
-            background-size: cover;
-            background-position: center;
-        }
-
-        .royal-blue-bg {
-            background-color: #002366;
-            /* Azul rey oscuro */
-        }
-
-        .royal-blue-text {
-            color: #002366;
-        }
-
-        .gold-text {
-            color: #D4AF37;
-        }
-
-        .card {
-            background-color: white;
-            border-radius: 1rem;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-        }
-
-        #gallery-modal {
-            transition: opacity 0.3s ease;
-        }
-
-        .gallery-thumb {
-            cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .gallery-thumb:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 25px rgba(0, 35, 102, 0.2);
-        }
-        
-        /* Estilos para el Itinerario */
-        .timeline-item {
-            position: relative;
-            padding-left: 3rem;
-            padding-bottom: 2rem;
-            border-left: 2px solid #a0b4d0;
-        }
-        .timeline-item:last-child {
-            border-left: 2px solid transparent;
-            padding-bottom: 0;
-        }
-        .timeline-dot {
-            position: absolute;
-            left: -0.7rem;
-            top: 0;
-            height: 1.25rem;
-            width: 1.25rem;
-            background-color: #002366;
-            border-radius: 50%;
-            border: 3px solid #f0f4f8;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="text-gray-700">
 
-    <!-- Hero Section -->
     <header class="hero-bg text-white min-h-screen flex flex-col items-center justify-center text-center p-6 relative">
         <div data-aos="fade-in" data-aos-duration="1500">
             <h2 class="text-3xl md:text-4xl tracking-widest uppercase">Mis XV Años</h2>
@@ -114,7 +34,6 @@
                 style="text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">25 de octubre de 2025</h1>
         </div>
 
-        <!-- Countdown Timer -->
         <div id="countdown" class="mt-12" data-aos="fade-up" data-aos-delay="500">
             <h3 class="text-2xl font-semibold mb-4">Faltan</h3>
             <div class="grid grid-cols-4 gap-4 text-center">
@@ -127,7 +46,6 @@
     </header>
 
     <main>
-        <!-- Quinceañera Section -->
         <section class="py-20 px-6 bg-white">
             <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
                 <h2 class="font-great-vibes text-5xl md:text-6xl royal-blue-text mb-4">Con la bendición de Dios</h2>
@@ -140,7 +58,6 @@
             </div>
         </section>
 
-        <!-- Parents & Godparents Section -->
         <section class="py-20 px-6 royal-blue-bg text-white">
             <div class="max-w-5xl mx-auto text-center" data-aos="fade-up">
                 <h2 class="font-great-vibes text-5xl md:text-6xl text-white mb-12">Con el amor de mis padres y padrinos</h2>
@@ -151,7 +68,6 @@
             </div>
         </section>
 
-        <!-- Event Details Section -->
         <section class="py-20 px-6">
             <div class="max-w-6xl mx-auto">
                 <div class="grid md:grid-cols-2 gap-12 items-start">
@@ -180,7 +96,6 @@
             </div>
         </section>
 
-        <!-- Itinerary Section -->
         <section class="py-20 px-6 bg-white">
             <div class="max-w-3xl mx-auto text-center" data-aos="fade-up">
                  <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto royal-blue-text mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
@@ -197,12 +112,10 @@
             </div>
         </section>
 
-        <!-- Photo Gallery Section -->
         <section class="py-20 px-6" style="background-color: #f0f4f8;">
             <div class="max-w-5xl mx-auto text-center" data-aos="fade-up">
                 <h2 class="font-great-vibes text-5xl md:text-6xl royal-blue-text mb-10">Mis Recuerdos</h2>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <!-- Fíjate en las clases h-64 y object-cover que se añadieron a cada imagen -->
                     <img src="fotos/foto1.jpeg" alt="Recuerdo de Ximena 1" class="w-full h-64 object-cover rounded-lg gallery-thumb" data-aos="zoom-in" onclick="openModal(this.src)">
                     <img src="fotos/foto2.jpeg" alt="Recuerdo de Ximena 2" class="w-full h-64 object-cover rounded-lg gallery-thumb" data-aos="zoom-in" data-aos-delay="100" onclick="openModal(this.src)">
                     <img src="fotos/foto3.jpeg" alt="Recuerdo de Ximena 3" class="w-full h-64 object-cover rounded-lg gallery-thumb" data-aos="zoom-in" data-aos-delay="200" onclick="openModal(this.src)">
@@ -215,7 +128,6 @@
             </div>
         </section>
 
-        <!-- Gift Registry Section -->
         <section class="py-20 px-6 bg-white">
             <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto royal-blue-text mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 11.25v8.25a1.5 1.5 0 01-1.5 1.5H5.25a1.5 1.5 0 01-1.5-1.5v-8.25M12 4.875A2.625 2.625 0 1014.625 7.5H9.375A2.625 2.625 0 1012 4.875z" /><path stroke-linecap="round" stroke-linejoin="round" d="M12 12.75v6.75" /></svg>
@@ -239,7 +151,6 @@
             </div>
         </section>
 
-        <!-- RSVP Section -->
         <section class="py-20 px-6 royal-blue-bg text-white">
             <div class="max-w-2xl mx-auto text-center">
                 <div data-aos="fade-up">
@@ -259,79 +170,12 @@
         <p class="text-sm text-gray-500 mt-2">Ximena | Mis XV Años 2025</p>
     </footer>
 
-    <div id="gallery-modal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center p-4 z-50 hidden" onclick="closeModal()"><img id="modal-img" src="" alt="Vista ampliada" class="max-w-full max-h-full rounded-lg" onclick="event.stopPropagation()"><button class="absolute top-4 right-4 text-white text-4xl font-bold">&times;</button></div>
+    <div id="gallery-modal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center p-4 z-50 hidden" onclick="closeModal()"><img id="modal-img" src="" alt="Vista ampliada" class="max-w-full max-h-full rounded-lg" onclick="event.stopPropagation()"><button class="absolute top-4 right-4 text-white text-4xl font-bold">×</button></div>
     <audio id="bg-music" loop><source src="assets/audio/fondo.mp3" type="audio/mpeg"></audio>
     <button id="music-toggle" class="fixed bottom-5 right-5 bg-blue-700 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg z-40"><svg id="play-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg><svg id="pause-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></button>
-
+    
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({ once: true, duration: 1000 });
-
-        const countdown = () => {
-            const countDate = new Date("October 25, 2025 18:00:00").getTime();
-            const now = new Date().getTime();
-            const gap = countDate - now;
-
-            if (gap < 0) {
-                document.getElementById('countdown').innerHTML = '<h3 class="text-3xl font-semibold">¡El gran día ha llegado!</h3>';
-                return;
-            }
-
-            const textDay = Math.floor(gap / (1000 * 60 * 60 * 24));
-            const textHour = Math.floor((gap % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const textMinute = Math.floor((gap % (1000 * 60 * 60)) / (1000 * 60));
-            const textSecond = Math.floor((gap % (1000 * 60)) / 1000);
-
-            document.getElementById('days').innerText = textDay < 10 ? '0' + textDay : textDay;
-            document.getElementById('hours').innerText = textHour < 10 ? '0' + textHour : textHour;
-            document.getElementById('minutes').innerText = textMinute < 10 ? '0' + textMinute : textMinute;
-            document.getElementById('seconds').innerText = textSecond < 10 ? '0' + textSecond : textSecond;
-        };
-        setInterval(countdown, 1000);
-
-        const modal = document.getElementById('gallery-modal');
-        const modalImg = document.getElementById('modal-img');
-        function openModal(src) { modal.classList.remove('hidden'); modalImg.src = src; }
-        function closeModal() { modal.classList.add('hidden'); }
-
-        const music = document.getElementById('bg-music');
-        const musicToggle = document.getElementById('music-toggle');
-        const playIcon = document.getElementById('play-icon');
-        const pauseIcon = document.getElementById('pause-icon');
-        let isPlaying = false;
-        musicToggle.addEventListener('click', () => {
-            isPlaying = !isPlaying;
-            if (isPlaying) { music.play(); playIcon.classList.add('hidden'); pauseIcon.classList.remove('hidden'); }
-            else { music.pause(); playIcon.classList.remove('hidden'); pauseIcon.classList.add('hidden'); }
-        });
-
-        function generateCalendarLinks() {
-            const gcalCeremonia = new URL('https://www.google.com/calendar/render');
-            gcalCeremonia.searchParams.append('action', 'TEMPLATE');
-            gcalCeremonia.searchParams.append('text', 'XV Años de Ximena - Ceremonia');
-            gcalCeremonia.searchParams.append('dates', `20251025T180000/20251025T190000`);
-            gcalCeremonia.searchParams.append('details', 'Ceremonia religiosa por los XV Años de Ximena.');
-            gcalCeremonia.searchParams.append('location', 'Parroquia de San Francisco de Asís Coacalco - Miguel Hidalgo Manzana 031, Coacalco de Berriozabal, Méx.');
-            document.getElementById('gcal-ceremonia').href = gcalCeremonia.href;
-
-            const gcalRecepcion = new URL('https://www.google.com/calendar/render');
-            gcalRecepcion.searchParams.append('action', 'TEMPLATE');
-            gcalRecepcion.searchParams.append('text', 'XV Años de Ximena - Recepción');
-            gcalRecepcion.searchParams.append('dates', `20251025T193000/20251026T020000`);
-            gcalRecepcion.searchParams.append('details', 'Fiesta de celebración por los XV Años de Ximena.');
-            gcalRecepcion.searchParams.append('location', 'Salón "Fiesta Colonial", C. Cenzontles 66, Parque Residencial Coacalco, Mex.');
-            document.getElementById('gcal-recepcion').href = gcalRecepcion.href;
-
-            const icsCeremonia = `BEGIN:VCALENDAR\nVERSION:2.0\nBEGIN:VEVENT\nURL:${document.location.href}\nDTSTART;TZID=America/Mexico_City:20251025T180000\nDTEND;TZID=America/Mexico_City:20251025T190000\nSUMMARY:XV Años de Ximena - Ceremonia\nDESCRIPTION:Ceremonia religiosa por los XV Años de Ximena.\nLOCATION:Parroquia de San Francisco de Asís Coacalco - Miguel Hidalgo Manzana 031, Coacalco de Berriozabal, Méx.\nEND:VEVENT\nEND:VCALENDAR`;
-            document.getElementById('ical-ceremonia').href = `data:text/calendar;charset=utf8,${encodeURIComponent(icsCeremonia)}`;
-            document.getElementById('ical-ceremonia').download = 'ceremonia-xv-Ximena.ics';
-
-            const icsRecepcion = `BEGIN:VCALENDAR\nVERSION:2.0\nBEGIN:VEVENT\nURL:${document.location.href}\nDTSTART;TZID=America/Mexico_City:20251025T193000\nDTEND;TZID=America/Mexico_City:20251026T020000\nSUMMARY:XV Años de Ximena - Recepción\nDESCRIPTION:Fiesta de celebración por los XV Años de Ximena.\nLOCATION:Salón "Fiesta Colonial", C. Cenzontles 66, Parque Residencial Coacalco, Mex.\nEND:VEVENT\nEND:VCALENDAR`;
-            document.getElementById('ical-recepcion').href = `data:text/calendar;charset=utf8,${encodeURIComponent(icsRecepcion)}`;
-            document.getElementById('ical-recepcion').download = 'recepcion-xv-Ximena.ics';
-        }
-        generateCalendarLinks();
-    </script>
+    <script src="scripts.js"></script>
 </body>
 
 </html>
