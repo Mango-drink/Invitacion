@@ -1,74 +1,119 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mis XV Años - Ximena</title>
-    
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+
     <!-- AOS (Animate On Scroll) Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
+
     <style>
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: #f0f4f8; /* Un gris azulado muy claro */
+            background-color: #f0f4f8;
+            /* Un gris azulado muy claro */
         }
+
         .font-great-vibes {
             font-family: 'Great Vibes', cursive;
         }
+
         .hero-bg {
             background-image: linear-gradient(rgba(25, 25, 112, 0.7), rgba(0, 0, 126, 0.8)), url('https://placehold.co/1200x800/e0e0e0/ffffff?text=Ximena');
             background-size: cover;
             background-position: center;
         }
+
         .royal-blue-bg {
-            background-color: #002366; /* Azul rey oscuro */
+            background-color: #002366;
+            /* Azul rey oscuro */
         }
+
         .royal-blue-text {
             color: #002366;
         }
+
         .gold-text {
             color: #D4AF37;
         }
+
         .card {
             background-color: white;
             border-radius: 1rem;
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
             transition: transform 0.3s ease;
         }
+
         .card:hover {
             transform: translateY(-5px);
         }
+
         #gallery-modal {
             transition: opacity 0.3s ease;
         }
+
         .gallery-thumb {
             cursor: pointer;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+
         .gallery-thumb:hover {
             transform: scale(1.05);
             box-shadow: 0 8px 25px rgba(0, 35, 102, 0.2);
         }
+        
+        /* Estilos para el Itinerario */
+        .timeline-item {
+            position: relative;
+            padding-left: 3rem;
+            padding-bottom: 2rem;
+            border-left: 2px solid #a0b4d0;
+        }
+        .timeline-item:last-child {
+            border-left: 2px solid transparent;
+            padding-bottom: 0;
+        }
+        .timeline-dot {
+            position: absolute;
+            left: -0.7rem;
+            top: 0;
+            height: 1.25rem;
+            width: 1.25rem;
+            background-color: #002366;
+            border-radius: 50%;
+            border: 3px solid #f0f4f8;
+        }
     </style>
 </head>
+
 <body class="text-gray-700">
 
     <!-- Hero Section -->
     <header class="hero-bg text-white min-h-screen flex flex-col items-center justify-center text-center p-6 relative">
         <div data-aos="fade-in" data-aos-duration="1500">
             <h2 class="text-3xl md:text-4xl tracking-widest uppercase">Mis XV Años</h2>
-            <h1 class="font-great-vibes text-7xl md:text-9xl my-4 text-white" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">Ximena</h1>
+            <h1 class="font-great-vibes text-7xl md:text-9xl my-4 text-white"
+                style="text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">Ximena</h1>
             <p class="text-lg md:text-xl">Me complace invitarte a celebrar un sueño hecho realidad.</p>
         </div>
-        
+
+        <div data-aos="fade-in" data-aos-duration="1500">
+            <h1 class="font-great-vibes text-7xl md:text-1xl my-4 text-white"
+                style="text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">25 de octubre de 2025</h1>
+        </div>
+
         <!-- Countdown Timer -->
         <div id="countdown" class="mt-12" data-aos="fade-up" data-aos-delay="500">
             <h3 class="text-2xl font-semibold mb-4">Faltan</h3>
@@ -86,9 +131,12 @@
         <section class="py-20 px-6 bg-white">
             <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
                 <h2 class="font-great-vibes text-5xl md:text-6xl royal-blue-text mb-4">Con la bendición de Dios</h2>
-                <p class="text-lg max-w-2xl mx-auto">"El Señor te bendiga y te guarde; el Señor haga resplandecer su rostro sobre ti, y tenga de ti misericordia; el Señor alce sobre ti su rostro, y ponga en ti paz." - Números 6:24-26</p>
+                <p class="text-lg max-w-2xl mx-auto">Hoy es un día muy especial para mí, un sueño que desde niña he esperado con mucha ilusión.
+                    Mis XV años marcan el inicio de una nueva etapa, llena de aprendizajes, cambios y momentos inolvidables.
+                    Agradezco a Dios, a mi familia y a todas las personas que me han acompañado hasta aquí.
+                    Y especialmente, quiero presentar a quienes me acompañan con amor y compromiso en este camino...</p>
                 <div class="w-24 h-1 bg-blue-200 mx-auto my-8"></div>
-                <p class="text-lg max-w-2xl mx-auto">Tengo el placer de invitarte a la celebración de mis XV años, un momento que he esperado con gran ilusión y que deseo compartir con las personas que más quiero.</p>
+                <p class="text-lg max-w-2xl mx-auto">Tengo el placer de invitarte a la celebración de mis XV años.</p>
             </div>
         </section>
 
@@ -97,18 +145,8 @@
             <div class="max-w-5xl mx-auto text-center" data-aos="fade-up">
                 <h2 class="font-great-vibes text-5xl md:text-6xl text-white mb-12">Con el amor de mis padres y padrinos</h2>
                 <div class="grid md:grid-cols-2 gap-12">
-                    <div data-aos="fade-right">
-                        <h3 class="text-3xl font-semibold mb-4">Mis Padres</h3>
-                        <p class="text-xl">Guillermo Rafael Pulido Arenas</p>
-                        <p class="text-xl">&</p>
-                        <p class="text-xl">Adriana Rangel Rangel</p>
-                    </div>
-                    <div data-aos="fade-left">
-                        <h3 class="text-3xl font-semibold mb-4">Mis Padrinos</h3>
-                        <p class="text-xl">María de Jesús Rangel Rivera</p>
-                        <p class="text-xl">&</p>
-                        <p class="text-xl">Héctor Alberto Sandoval Rangel</p>
-                    </div>
+                    <div data-aos="fade-right"><h3 class="text-3xl font-semibold mb-4">Mis Padres</h3><p class="text-xl">Guillermo Rafael Pulido Arenas</p><p class="text-xl">&</p><p class="text-xl">Adriana Rangel Rangel</p></div>
+                    <div data-aos="fade-left"><h3 class="text-3xl font-semibold mb-4">Mis Padrinos</h3><p class="text-xl">María de Jesús Rangel Rivera</p><p class="text-xl">&</p><p class="text-xl">Héctor Alberto Sandoval Rangel</p></div>
                 </div>
             </div>
         </section>
@@ -133,7 +171,7 @@
                             <p class="text-xl font-semibold">Salón "Fiesta Colonial"</p>
                             <p>C. Cenzontles 66, Parque Residencial Coacalco, Mex.</p>
                             <p class="font-bold text-lg mt-2">25 de Octubre, 2025 - 7:30 PM</p>
-                             <div class="mt-4"><a id="gcal-recepcion" href="#" target="_blank" class="inline-block bg-blue-100 text-blue-800 text-sm font-semibold mr-2 px-3 py-1 rounded-full">Añadir a Google Calendar</a><a id="ical-recepcion" href="#" class="inline-block bg-gray-200 text-gray-800 text-sm font-semibold px-3 py-1 rounded-full">Añadir a iCal/Outlook</a></div>
+                            <div class="mt-4"><a id="gcal-recepcion" href="#" target="_blank" class="inline-block bg-blue-100 text-blue-800 text-sm font-semibold mr-2 px-3 py-1 rounded-full">Añadir a Google Calendar</a><a id="ical-recepcion" href="#" class="inline-block bg-gray-200 text-gray-800 text-sm font-semibold px-3 py-1 rounded-full">Añadir a iCal/Outlook</a></div>
                         </div>
                         <a href="https://maps.app.goo.gl/41XVjBF7QMAguGcx8" target="_blank" class="inline-block bg-blue-700 text-white font-bold py-2 px-6 rounded-full hover:bg-blue-800 transition duration-300 mt-6">Ver en Mapa</a>
                     </div>
@@ -142,82 +180,76 @@
             </div>
         </section>
 
-        <!-- Photo Gallery Section -->
+        <!-- Itinerary Section -->
         <section class="py-20 px-6 bg-white">
-            <div class="max-w-5xl mx-auto text-center" data-aos="fade-up">
-                <h2 class="font-great-vibes text-5xl md:text-6xl royal-blue-text mb-10">Mis Recuerdos</h2>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <img src="https://placehold.co/400x500/002366/ffffff?text=Foto+1" alt="Recuerdo de Ximena 1" class="w-full h-auto rounded-lg gallery-thumb" data-aos="zoom-in" onclick="openModal(this.src)">
-                    <img src="https://placehold.co/400x500/a0b4d0/ffffff?text=Foto+2" alt="Recuerdo de Ximena 2" class="w-full h-auto rounded-lg gallery-thumb" data-aos="zoom-in" data-aos-delay="100" onclick="openModal(this.src)">
-                    <img src="https://placehold.co/400x500/002366/ffffff?text=Foto+3" alt="Recuerdo de Ximena 3" class="w-full h-auto rounded-lg gallery-thumb" data-aos="zoom-in" data-aos-delay="200" onclick="openModal(this.src)">
-                    <img src="https://placehold.co/400x500/a0b4d0/ffffff?text=Foto+4" alt="Recuerdo de Ximena 4" class="w-full h-auto rounded-lg gallery-thumb" data-aos="zoom-in" data-aos-delay="300" onclick="openModal(this.src)">
-                    <img src="https://placehold.co/400x500/002366/ffffff?text=Foto+5" alt="Recuerdo de Ximena 5" class="w-full h-auto rounded-lg gallery-thumb" data-aos="zoom-in" data-aos-delay="400" onclick="openModal(this.src)">
-                    <img src="https://placehold.co/400x500/a0b4d0/ffffff?text=Foto+6" alt="Recuerdo de Ximena 6" class="w-full h-auto rounded-lg gallery-thumb" data-aos="zoom-in" data-aos-delay="300" onclick="openModal(this.src)">
-                    <img src="https://placehold.co/400x500/002366/ffffff?text=Foto+7" alt="Recuerdo de Ximena 7" class="w-full h-auto rounded-lg gallery-thumb" data-aos="zoom-in" data-aos-delay="400" onclick="openModal(this.src)">
-                    <img src="https://placehold.co/400x500/a0b4d0/ffffff?text=Foto+8" alt="Recuerdo de Ximena 8" class="w-full h-auto rounded-lg gallery-thumb" data-aos="zoom-in" data-aos-delay="500" onclick="openModal(this.src)">
-                    <img src="https://placehold.co/400x500/002366/ffffff?text=Foto+9" alt="Recuerdo de Ximena 9" class="w-full h-auto rounded-lg gallery-thumb" data-aos="zoom-in" data-aos-delay="600" onclick="openModal(this.src)">
-                    <img src="https://placehold.co/400x500/a0b4d0/ffffff?text=Foto+10" alt="Recuerdo de Ximena 10" class="w-full h-auto rounded-lg gallery-thumb" data-aos="zoom-in" data-aos-delay="700" onclick="openModal(this.src)">
-                    <img src="https://placehold.co/400x500/002366/ffffff?text=Foto+11" alt="Recuerdo de Ximena 11" class="w-full h-auto rounded-lg gallery-thumb" data-aos="zoom-in" data-aos-delay="800" onclick="openModal(this.src)">
-                    <img src="https://placehold.co/400x500/a0b4d0/ffffff?text=Foto+12" alt="Recuerdo de Ximena 12" class="w-full h-auto rounded-lg gallery-thumb" data-aos="zoom-in" data-aos-delay="900" onclick="openModal(this.src)">
-                    <img src="https://placehold.co/400x500/002366/ffffff?text=Foto+13" alt="Recuerdo de Ximena 13" class="w-full h-auto rounded-lg gallery-thumb" data-aos="zoom-in" data-aos-delay="1000" onclick="openModal(this.src)">
-                    <img src="https://placehold.co/400x500/a0b4d0/ffffff?text=Foto+14" alt="Recuerdo de Ximena 14" class="w-full h-auto rounded-lg gallery-thumb" data-aos="zoom-in" data-aos-delay="1100" onclick="openModal(this.src)">
-                    <img src="https://placehold.co/400x500/002366/ffffff?text=Foto+15" alt="Recuerdo de Ximena 15" class="w-full h-auto rounded-lg gallery-thumb" data-aos="zoom-in" data-aos-delay="1200" onclick="openModal(this.src)">
-                    <img src="https://placehold.co/400x500/a0b4d0/ffffff?text=Foto+16" alt="Recuerdo de Ximena 16" class="w-full h-auto rounded-lg gallery-thumb" data-aos="zoom-in" data-aos-delay="1300" onclick="openModal(this.src)">
+            <div class="max-w-3xl mx-auto text-center" data-aos="fade-up">
+                 <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto royal-blue-text mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0h18M-4.5 12h22.5" />
+                </svg>
+                <h2 class="font-great-vibes text-5xl md:text-6xl royal-blue-text mb-12">Itinerario del Evento</h2>
+                <div class="max-w-md mx-auto text-left">
+                    <div class="timeline-item"><div class="timeline-dot"></div><p class="font-semibold text-lg">6:00 PM</p><p class="text-gray-600">Ceremonia Religiosa</p></div>
+                    <div class="timeline-item"><div class="timeline-dot"></div><p class="font-semibold text-lg">7:30 PM</p><p class="text-gray-600">Bienvenida en Recepción</p></div>
+                    <div class="timeline-item"><div class="timeline-dot"></div><p class="font-semibold text-lg">8:30 PM</p><p class="text-gray-600">Cena</p></div>
+                    <div class="timeline-item"><div class="timeline-dot"></div><p class="font-semibold text-lg">9:30 PM</p><p class="text-gray-600">Vals y Brindis</p></div>
+                    <div class="timeline-item"><div class="timeline-dot"></div><p class="font-semibold text-lg">10:00 PM</p><p class="text-gray-600">¡Que comience la fiesta!</p></div>
                 </div>
             </div>
         </section>
-        
-        <!-- Gift Registry Section -->
-        <section class="py-20 px-6" style="background-color: #f0f4f8;">
-            <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto royal-blue-text mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" /></svg>
-                <h2 class="font-great-vibes text-5xl md:text-6xl royal-blue-text mb-6">Mesa de Regalos</h2>
-                <p class="text-lg max-w-2xl mx-auto">Tu presencia es mi mejor regalo, pero si deseas obsequiarme algo, puedes hacerlo a través de mi mesa de regalos, con un regalo monetario o  que me ayudará a cumplir mis sueños.</p>
-                <div class="mt-8 flex flex-wrap justify-center gap-6">
-                     <div class="card p-6 w-72" data-aos="flip-left" data-aos-delay="100">
-                        <h3 class="text-xl font-semibold royal-blue-text">Opción 1</h3>
-                        <p class="mt-2">Mesa de regalos en <span class="font-bold">Amazon</span>.</p>
-                        <p class="text-sm mt-1">XV años Ximena</p>
-                        <a href="https://www.amazon.com.mx/registries/gl/guest-view/379XFTJPWXI9X?ref_=cm_sw_r_cp_ud_ggr-subnav-share_XNN2YAJZ72FCKF7CH2P3" target="_blank" class="inline-block bg-blue-700 text-white font-bold py-2 px-6 rounded-full hover:bg-blue-800 transition duration-300 mt-6">Ver Mesa de regalos</a>
-                    </div>
-                    <div class="card p-6 w-72" data-aos="flip-left" data-aos-delay="300">
-                        <h3 class="text-xl font-semibold royal-blue-text">Opción 2</h3>
-                        <p class="mt-2">Regalo monetario (Lluvia de sobres).</p>
-                        <p class="text-sm mt-1">Habrá un espacio especial en la recepción.</p>
-                    </div>
 
-                    <div class="card p-6 w-72" data-aos="flip-left" data-aos-delay="500">
-                        <h3 class="text-xl font-semibold royal-blue-text">Opción 3</h3>
-                        <p class="mt-2">Regalo de tú preferencia</p>
-                        <p class="text-sm mt-1">Lo apreciaré con toda mi gratitud.</p>
+        <!-- Photo Gallery Section -->
+        <section class="py-20 px-6" style="background-color: #f0f4f8;">
+            <div class="max-w-5xl mx-auto text-center" data-aos="fade-up">
+                <h2 class="font-great-vibes text-5xl md:text-6xl royal-blue-text mb-10">Mis Recuerdos</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <!-- Fíjate en las clases h-64 y object-cover que se añadieron a cada imagen -->
+                    <img src="fotos/foto1.jpeg" alt="Recuerdo de Ximena 1" class="w-full h-64 object-cover rounded-lg gallery-thumb" data-aos="zoom-in" onclick="openModal(this.src)">
+                    <img src="fotos/foto2.jpeg" alt="Recuerdo de Ximena 2" class="w-full h-64 object-cover rounded-lg gallery-thumb" data-aos="zoom-in" data-aos-delay="100" onclick="openModal(this.src)">
+                    <img src="fotos/foto3.jpeg" alt="Recuerdo de Ximena 3" class="w-full h-64 object-cover rounded-lg gallery-thumb" data-aos="zoom-in" data-aos-delay="200" onclick="openModal(this.src)">
+                    <img src="fotos/foto4.jpeg" alt="Recuerdo de Ximena 4" class="w-full h-64 object-cover rounded-lg gallery-thumb" data-aos="zoom-in" data-aos-delay="300" onclick="openModal(this.src)">
+                    <img src="fotos/foto5.jpeg" alt="Recuerdo de Ximena 5" class="w-full h-64 object-cover rounded-lg gallery-thumb" data-aos="zoom-in" data-aos-delay="400" onclick="openModal(this.src)">
+                    <img src="fotos/foto6.jpeg" alt="Recuerdo de Ximena 6" class="w-full h-64 object-cover rounded-lg gallery-thumb" data-aos="zoom-in" data-aos-delay="500" onclick="openModal(this.src)">
+                    <img src="fotos/foto7.jpeg" alt="Recuerdo de Ximena 7" class="w-full h-64 object-cover rounded-lg gallery-thumb" data-aos="zoom-in" data-aos-delay="600" onclick="openModal(this.src)">
+                    <img src="fotos/foto8.jpeg" alt="Recuerdo de Ximena 8" class="w-full h-64 object-cover rounded-lg gallery-thumb" data-aos="zoom-in" data-aos-delay="700" onclick="openModal(this.src)">
+                </div>
+            </div>
+        </section>
+
+        <!-- Gift Registry Section -->
+        <section class="py-20 px-6 bg-white">
+            <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto royal-blue-text mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 11.25v8.25a1.5 1.5 0 01-1.5 1.5H5.25a1.5 1.5 0 01-1.5-1.5v-8.25M12 4.875A2.625 2.625 0 1014.625 7.5H9.375A2.625 2.625 0 1012 4.875z" /><path stroke-linecap="round" stroke-linejoin="round" d="M12 12.75v6.75" /></svg>
+                <h2 class="font-great-vibes text-5xl md:text-6xl royal-blue-text mb-6">Mesa de Regalos</h2>
+                <p class="text-lg max-w-2xl mx-auto">Tu presencia es mi mejor regalo, pero si deseas obsequiarme algo, puedes hacerlo a través de cualquiera de estas opciones.</p>
+                <div class="mt-8 grid md:grid-cols-3 gap-8">
+                    <div class="card p-6" data-aos="flip-left" data-aos-delay="100">
+                        <h3 class="text-xl font-semibold royal-blue-text">Amazon</h3>
+                        <p class="mt-2 text-sm">Encuentra mi lista de deseos en Amazon.</p>
+                        <a href="https://www.amazon.com.mx/registries/gl/guest-view/379XFTJPWXI9X?ref_=cm_sw_r_cp_ud_ggr-subnav-share_XNN2YAJZ72FCKF7CH2P3" target="_blank" class="inline-block bg-yellow-400 text-blue-900 font-bold py-2 px-5 rounded-full hover:bg-yellow-500 transition duration-300 mt-4 text-sm">Ver Lista</a>
+                    </div>
+                    <div class="card p-6" data-aos="flip-left" data-aos-delay="300">
+                        <h3 class="text-xl font-semibold royal-blue-text">Lluvia de Sobres</h3>
+                        <p class="mt-2 text-sm">Habrá un espacio especial en la recepción para regalos monetarios.</p>
+                    </div>
+                    <div class="card p-6" data-aos="flip-left" data-aos-delay="500">
+                        <h3 class="text-xl font-semibold royal-blue-text">Tu Elección</h3>
+                        <p class="mt-2 text-sm">Cualquier regalo de tu preferencia será apreciado con toda mi gratitud.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- RSVP Section -->
-        <section id="rsvp" class="py-20 px-6 royal-blue-bg text-white">
+        <section class="py-20 px-6 royal-blue-bg text-white">
             <div class="max-w-2xl mx-auto text-center">
                 <div data-aos="fade-up">
-                    <h2 class="font-great-vibes text-5xl md:text-6xl mb-6">Confirmar Asistencia</h2>
-                    <p class="mb-8">Por favor, confirma tu asistencia antes del 10 de Octubre de 2025. ¡Espero contar contigo!</p>
+                     <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                    <h3 class="font-great-vibes text-5xl">Confirma tu Asistencia</h3>
+                    <p class="mt-4">Por favor, confirma antes del 05 de Octubre de 2025. ¡Espero contar contigo!</p>
+                     <div class="mt-6">
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSefC_Sa0ca9Ak9ATuxm21OiTLf7hNTFuKb5v0ZyKg1CPpVSnA/viewform?usp=header" target="_blank" class="inline-block bg-yellow-400 text-blue-900 font-bold py-3 px-8 rounded-full hover:bg-yellow-500 transition duration-300">Confirmar aquí</a>
+                    </div>
                 </div>
-                <form id="rsvp-form" class="space-y-6" data-aos="fade-up" data-aos-delay="200">
-                    <div>
-                        <label for="name" class="sr-only">Nombre Completo</label>
-                        <input type="text" id="name" name="name" placeholder="Nombre Completo" required class="w-full p-4 rounded-lg bg-white/90 text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-400">
-                    </div>
-                    <!-- Guests Input 
-                     <div>
-                        <label for="guests" class="sr-only">Número de Invitados (incluyéndote)</label>
-                        <input type="number" id="guests" name="guests" min="1" max="10" placeholder="Número de Invitados (incluyéndote)" required class="w-full p-4 rounded-lg bg-white/90 text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-400">
-                    </div>
-                    -->
-                    <button type="submit" id="submit-rsvp" class="w-full bg-yellow-400 text-blue-900 font-bold py-4 px-8 rounded-full hover:bg-yellow-500 transition duration-300 text-lg">
-                        Enviar Confirmación
-                    </button>
-                </form>
-                <div id="confirmation-message" class="mt-6 text-lg font-semibold hidden"></div>
             </div>
         </section>
     </main>
@@ -226,15 +258,13 @@
         <p class="font-great-vibes text-3xl royal-blue-text">¡Te espero!</p>
         <p class="text-sm text-gray-500 mt-2">Ximena | Mis XV Años 2025</p>
     </footer>
-    
+
     <div id="gallery-modal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center p-4 z-50 hidden" onclick="closeModal()"><img id="modal-img" src="" alt="Vista ampliada" class="max-w-full max-h-full rounded-lg" onclick="event.stopPropagation()"><button class="absolute top-4 right-4 text-white text-4xl font-bold">&times;</button></div>
-    <audio id="bg-music" loop><source src="https://www.dropbox.com/scl/fi/zh18j1gnbp7876dl74nmj/fondo.mp3?rlkey=8f1jb6p9j1jzq9u64je6ej320&st=wop03ksp&dl=0" type="audio/mpeg"></audio>
+    <audio id="bg-music" loop><source src="assets/audio/fondo.mp3" type="audio/mpeg"></audio>
     <button id="music-toggle" class="fixed bottom-5 right-5 bg-blue-700 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg z-40"><svg id="play-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg><svg id="pause-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></button>
 
-    <!-- AOS (Animate On Scroll) Script -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // This script tag is intentionally not a module to run standard browser JS
         AOS.init({ once: true, duration: 1000 });
 
         const countdown = () => {
@@ -271,7 +301,7 @@
         let isPlaying = false;
         musicToggle.addEventListener('click', () => {
             isPlaying = !isPlaying;
-            if (isPlaying) { music.play(); playIcon.classList.add('hidden'); pauseIcon.classList.remove('hidden'); } 
+            if (isPlaying) { music.play(); playIcon.classList.add('hidden'); pauseIcon.classList.remove('hidden'); }
             else { music.pause(); playIcon.classList.remove('hidden'); pauseIcon.classList.add('hidden'); }
         });
 
@@ -303,4 +333,5 @@
         generateCalendarLinks();
     </script>
 </body>
+
 </html>
