@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis XV Años - Ximena</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        /* Estilos base de tu invitación original */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .font-great-vibes {
+            font-family: 'Great Vibes', cursive;
+        }
+
+        /* Fondo principal hero */
+        .hero-bg {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.9), rgba(147, 51, 234, 0.8)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="80" r="1" fill="rgba(255,255,255,0.05)"/><circle cx="40" cy="60" r="0.5" fill="rgba(255,255,255,0.08)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            background-size: cover, 100px 100px;
+            background-position: center, 0 0;
+        }
+
+        /* Secciones de fondo */
+        .section-bg {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        }
+
+        .section-bg-alt {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            color: white;
+        }
+
+        /* Patrón de fondo */
+        .pattern-bg {
+            background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.15) 1px, transparent 0);
+            background-size: 20px 20px;
+        }
+
+        /* Estilos de texto */
+        .title-cursive {
+            color: #1e40af;
+        }
+
+        .title-accent {
+            color: #d97706;
+        }
+
+        .text-primary {
+            color: #1f2937;
+        }
+
+        .text-secondary {
+            color: #6b7280;
+        }
+
+        .royal-blue-text {
+            color: #1e40af;
+        }
+
+        /* Cards y elementos */
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .dress-code-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 250, 252, 0.9));
+            border: 2px solid rgba(30, 64, 175, 0.2);
+        }
+
+        /* Botones */
+        .btn-primary {
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            color: white;
+            border: none;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #2563eb, #1e40af);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
+        }
+
+        /* Timeline */
+        .timeline-item {
+            position: relative;
+            padding-bottom: 3rem;
+        }
+
+        .timeline-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 0.75rem;
+            top: 2.5rem;
+            width: 2px;
+            height: calc(100% - 1rem);
+            background: linear-gradient(to bottom, #d97706, rgba(217, 119, 6, 0.3));
+        }
+
+        .timeline-dot {
+            width: 1.5rem;
+            height: 1.5rem;
+            background: linear-gradient(135deg, #d97706, #f59e0b);
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 4px 12px rgba(217, 119, 6, 0.3);
+        }
+
+        /* Galería */
+        .gallery-thumb {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-thumb:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-thumb .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-thumb:hover .overlay {
+            opacity: 1;
+        }
+
+        .scroll-container {
+            scrollbar-width: thin;
+            scrollbar-color: #d97706 #f3f4f6;
+        }
+
+        .scroll-container::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .scroll-container::-webkit-scrollbar-track {
+            background: #f3f4f6;
+            border-radius: 3px;
+        }
+
+        .scroll-container::-webkit-scrollbar-thumb {
+            background: #d97706;
+            border-radius: 3px;
+        }
+
+        /* Modal */
+        .modal-container {
+            backdrop-filter: blur(8px);
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 250, 252, 0.9));
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .divider {
+            background: linear-gradient(to right, transparent, #d97706, transparent);
+        }
+
+        /* Estilos para la pantalla de código */
+        .code-screen {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.95), rgba(147, 51, 234, 0.9)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="stars" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.2)"/><circle cx="75" cy="75" r="1.5" fill="rgba(255,255,255,0.15)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.3)"/><circle cx="10" cy="90" r="1.2" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23stars)"/></svg>');
+            background-size: cover, 150px 150px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .code-container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            max-width: 500px;
+            width: 90%;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .code-input {
+            width: 100%;
+            padding: 15px 20px;
+            font-size: 1.2rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.9);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+        }
+
+        .code-input:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .error-message {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+            color: white;
+            padding: 15px;
+            border-radius: 12px;
+            margin-top: 20px;
+            display: none;
+            animation: shake 0.5s ease-in-out;
+        }
+
+        .success-message {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            padding: 15px;
+            border-radius: 12px;
+            margin-top: 20px;
+            display: none;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-8px); }
+            75% { transform: translateX(8px); }
+        }
+
+        /* Sección personalizada para invitado */
+        .guest-info-section {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(147, 51, 234, 0.05));
+            border: 2px solid rgba(59, 130, 246, 0.2);
+            border-radius: 16px;
+            padding: 30px;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .guest-name {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #1e40af;
+            margin-bottom: 10px;
+        }
+
+        .guest-count {
+            font-size: 1.2rem;
+            color: #6b7280;
+            margin-bottom: 15px;
+        }
+
+        .personal-message {
+            font-style: italic;
+            color: #374151;
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+
+        /* Animaciones */
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .code-container {
+                padding: 25px;
+                margin: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Pantalla de ingreso de código -->
+    <div id="codeScreen" class="code-screen">
+        <div class="code-container fade-in">
+            <h1 class="font-great-vibes text-6xl text-primary mb-4">Mis XV Años</h1>
+            <h2 class="font-great-vibes text-4xl title-accent mb-2">Ximena</h2>
+            <p class="text-lg text-secondary mb-8">25 de Octubre de 2025</p>
+            
+            <div class="mb-8">
+                <label for="inviteCode" class="block text-left font-semibold text-primary mb-3">
+                    Ingresa tu código de invitación:
+                </label>
+                <input type="text" id="inviteCode" class="code-input" placeholder="Ej: FAMGARCIA" maxlength="15">
+            </div>
+            
+            <button id="validateButton" class="btn-primary font-bold py-4 px-8 rounded-full text-lg w-full">
+                ✨ Ver mi invitación ✨
+            </button>
+            
+            <div class="error-message" id="errorMessage"></div>
+            <div class="success-message" id="successMessage"></div>
+        </div>
+    </div>
+
+    <!-- Tu invitación original con información personalizada -->
+    <div id="invitationContent" style="display: none;">
+        <header class="hero-bg text-white min-h-screen flex flex-col items-center justify-center text-center p-6 relative">
+            <div data-aos="zoom-in" data-aos-duration="1500">
+                <h2 class="text-2xl md:text-3xl tracking-widest uppercase font-light">Mis XV Años</h2>
+                <h1 class="font-great-vibes text-8xl md:text-9xl my-2 text-white"
+                    style="text-shadow: 2px 2px 8px rgba(0,0,0,0.6);">Ximena</h1>
+                <h3 class="text-2xl md:text-3xl font-light title-accent mt-4">25 de Octubre de 2025</h3>
+            </div>
+
+            <div id="countdown" class="mt-16 w-full max-w-2xl" data-aos="fade-up" data-aos-delay="500">
+                <div class="grid grid-cols-4 gap-4 text-center text-white">
+                    <div>
+                        <div id="days" class="text-4xl md:text-5xl font-semibold">00</div>
+                        <div class="mt-1 text-xs uppercase tracking-wider">Días</div>
+                    </div>
+                    <div>
+                        <div id="hours" class="text-4xl md:text-5xl font-semibold">00</div>
+                        <div class="mt-1 text-xs uppercase tracking-wider">Horas</div>
+                    </div>
+                    <div>
+                        <div id="minutes" class="text-4xl md:text-5xl font-semibold">00</div>
+                        <div class="mt-1 text-xs uppercase tracking-wider">Minutos</div>
+                    </div>
+                    <div>
+                        <div id="seconds" class="text-4xl md:text-5xl font-semibold">00</div>
+                        <div class="mt-1 text-xs uppercase tracking-wider">Segundos</div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section class="py-24 px-6 section-bg">
+                <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
+                    <h2 class="font-great-vibes text-6xl md:text-7xl title-cursive mb-4">Un Sueño Hecho Realidad</h2>
+                    <p class="text-lg max-w-3xl mx-auto text-secondary">Hoy mi corazón rebosa de alegría al compartir con
+                        ustedes el inicio de una nueva etapa. Agradezco a Dios por su amor infinito, a mis padres por su
+                        guía incondicional, y a mis padrinos por aceptar ser mis consejeros en este viaje.</p>
+                    <div class="w-24 h-px divider mx-auto my-10"></div>
+                    <p class="text-xl font-semibold text-primary">Con su presencia, mi celebración estará completa.</p>
+                </div>
+                
+                <!-- Sección de información personalizada del invitado -->
+                <div class="max-w-4xl mx-auto mt-16" data-aos="fade-up" data-aos-delay="300">
+                    <div class="guest-info-section">
+                        <div class="guest-name" id="guestName">🎉 Invitado Especial 🎉</div>
+                        <div class="guest-count" id="guestCount">👥 Invitación personalizada</div>
+                        <div class="personal-message" id="personalMessage">¡Gracias por ser parte de este momento tan especial!</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Presentación de la Familia -->
+            <section class="py-24 px-6 section-bg-alt pattern-bg">
+                <div class="max-w-5xl mx-auto text-center" data-aos="fade-up">
+                    <h2 class="font-great-vibes text-6xl md:text-7xl title-cursive mb-16">Con el Amor de mi Familia</h2>
+                    <div class="grid md:grid-cols-2 gap-16">
+                        <div data-aos="fade-right"
+                            class="border-b-2 md:border-b-0 md:border-r-2 border-white/10 md:border-gray-500/20 pb-8 md:pb-0 md:pr-8">
+                            <h3 class="text-2xl font-semibold mb-4 tracking-wider uppercase text-primary">Mis Padres</h3>
+                            <p class="text-2xl font-light text-secondary">Guillermo Rafael Pulido Arenas.</p>
+                            <p class="text-2xl font-light text-secondary">& Adriana Rangel Rangel.</p>
+                        </div>
+                        <div data-aos="fade-left" class="pt-8 md:pt-0 md:pl-8">
+                            <h3 class="text-2xl font-semibold mb-4 tracking-wider uppercase text-primary">Mis Padrinos</h3>
+                            <p class="text-2xl font-light text-secondary">María de Jesús Rangel Rivera.</p>
+                            <p class="text-2xl font-light text-secondary">& Héctor Alberto Sandoval Rangel.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--Ubicación y Fecha-->
+            <section class="py-24 px-6 section-bg">
+                <div class="max-w-6xl mx-auto">
+                    <div class="text-center mb-16" data-aos="fade-up">
+                        <h2 class="font-great-vibes text-6xl md:text-7xl title-cursive mb-4">Acompáñame a Celebrar</h2>
+                        <p class="text-lg text-secondary">Estos son los lugares donde escribiremos esta nueva historia.</p>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-8 items-start">
+                        <div data-aos="zoom-in-left" class="text-center card p-8 flex flex-col justify-between">
+                            <div>
+                                <h2 class="font-great-vibes text-5xl royal-blue-text mb-4">Ceremonia Religiosa</h2>
+                                <p class="text-xl font-semibold">Parroquia de San Francisco de Asís Coacalco</p>
+                                <p>Miguel Hidalgo Manzana 031, Coacalco de Berriozabal, Méx.</p>
+                                <p class="font-bold text-lg mt-2">25 de Octubre de 2025 - 6:00 PM</p>
+                                <div class="mt-4 flex flex-wrap justify-center gap-2">
+                                    <a id="gcal-ceremonia-map" href="#" target="_blank"
+                                        class="inline-block bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">Añadir
+                                        a Google Calendar</a>
+                                    <a id="ical-ceremonia" href="#"
+                                        class="inline-block bg-gray-200 text-gray-800 text-sm font-semibold px-3 py-1 rounded-full">Añadir
+                                        a iCal/Outlook</a>
+                                </div>
+                            </div>
+                            <a href="https://maps.app.goo.gl/JKvnxS2CxU49ALxo8" target="_blank"
+                                class="inline-block bg-blue-700 text-white font-bold py-2 px-6 rounded-full hover:bg-blue-800 transition duration-300 mt-6">Ver
+                                en Mapa</a>
+                        </div>
+                        <div data-aos="zoom-in-left" class="text-center card p-8 flex flex-col justify-between">
+                            <div>
+                                <h2 class="font-great-vibes text-5xl royal-blue-text mb-4">Recepción</h2>
+                                <p class="text-xl font-semibold">Salón "Fiesta Colonial"</p>
+                                <p>C. Cenzontles 66, Parque Residencial Coacalco, Mex.</p>
+                                <p class="font-bold text-lg mt-2">25 de Octubre de 2025 - 7:30 PM</p>
+                                <div class="mt-4 flex flex-wrap justify-center gap-2">
+                                    <a id="gcal-recepcion" href="#" target="_blank"
+                                        class="inline-block bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">Añadir
+                                        a Google Calendar</a>
+                                    <a id="ical-recepcion" href="#"
+                                        class="inline-block bg-gray-200 text-gray-800 text-sm font-semibold px-3 py-1 rounded-full">Añadir
+                                        a iCal/Outlook</a>
+                                </div>
+                            </div>
+                            <a href="https://maps.app.goo.gl/2F8pG2V8QeZ1Xy9A7" target="_blank"
+                                class="inline-block bg-blue-700 text-white font-bold py-2 px-6 rounded-full hover:bg-blue-800 transition duration-300 mt-6">Ver
+                                en Mapa</a>
+                        </div>
+                    </div>
+                    <div class="max-w-md mx-auto mt-16" data-aos="fade-up">
+                        <div class="dress-code-card rounded-lg p-8 text-center">
+                            <h3 class="text-2xl font-semibold text-primary tracking-wider uppercase">Código de Vestimenta
+                            </h3>
+                            <p class="font-great-vibes text-5xl title-accent mt-2 mb-4">Formal</p>
+                            <button id="dress-code-btn"
+                                class="btn-primary font-semibold py-2 px-5 rounded-full mt-2 inline-block text-sm">Ver
+                                Ejemplos</button>
+                            <p class="text-xs text-secondary mt-4"><span class="font-bold">Nota:</span> Agradecemos de
+                                corazón no usar el color azul rey.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Itinerario -->
+            <section class="py-24 px-6 section-bg-alt pattern-bg">
+                <div class="max-w-3xl mx-auto" data-aos="fade-up">
+                    <div class="text-center mb-16">
+                        <h2 class="font-great-vibes text-6xl md:text-7xl title-cursive mb-4">Nuestro Itinerario</h2>
+                        <p class="text-lg text-secondary">Una noche mágica llena de momentos especiales.</p>
+                    </div>
+
+                    <!-- Itinerario -->
+                    <div class="max-w-md mx-auto mb-20 relative">
+                        <div class="timeline-item flex items-start">
+                            <div class="timeline-dot"></div>
+                            <div class="ml-8 flex-1">
+                                <p class="font-semibold text-xl text-primary flex items-center gap-2 mb-1">
+                                    🏛️ 6:00 PM
+                                </p>
+                                <p class="text-secondary text-lg">Ceremonia Religiosa - Unámonos en fe para
+                                    bendecir este nuevo comienzo.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item flex items-start">
+                            <div class="timeline-dot"></div>
+                            <div class="ml-8 flex-1">
+                                <p class="font-semibold text-xl text-primary flex items-center gap-2 mb-1">
+                                    🥂 7:30 PM
+                                </p>
+                                <p class="text-secondary text-lg">Entrada al Salón - El inicio de la celebración con
+                                    risas y alegría.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item flex items-start">
+                            <div class="timeline-dot"></div>
+                            <div class="ml-8 flex-1">
+                                <p class="font-semibold text-xl text-primary flex items-center gap-2 mb-1">
+                                    💃 8:20 PM
+                                </p>
+                                <p class="text-secondary text-lg">Primer Baile</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item flex items-start">
+                            <div class="timeline-dot"></div>
+                            <div class="ml-8 flex-1">
+                                <p class="font-semibold text-xl text-primary flex items-center gap-2 mb-1">
+                                    🍽️ 9:00 PM
+                                </p>
+                                <p class="text-secondary text-lg">Cena</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item flex items-start">
+                            <div class="timeline-dot"></div>
+                            <div class="ml-8 flex-1">
+                                <p class="font-semibold text-xl text-primary flex items-center gap-2 mb-1">
+                                    👑 10:00 PM
+                                </p>
+                                <p class="text-secondary text-lg">Ceremonia</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item flex items-start">
+                            <div class="timeline-dot"></div>
+                            <div class="ml-8 flex-1">
+                                <p class="font-semibold text-xl text-primary flex items-center gap-2 mb-1">
+                                    🎉 11:00 PM
+                                </p>
+                                <p class="text-secondary text-lg">¡Que de inicio la Fiesta!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Mesa de Regalos -->
+            <section class="py-24 px-6 section-bg pattern-bg">
+                <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
+                    <h2 class="font-great-vibes text-6xl md:text-7xl title-cursive mb-6">Mesa de Regalos</h2>
+                    <p class="text-lg max-w-2xl mx-auto text-secondary">Tu presencia es el mejor regalo. Si además deseas
+                        obsequiarme algo, aquí te presento algunas opciones con mucho cariño.</p>
+                    <div class="mt-12 grid md:grid-cols-3 gap-8 justify-center">
+                        <div class="card p-8" data-aos="fade-up" data-aos-delay="200">
+                            <h3 class="text-xl font-semibold title-accent">Lluvia de Sobres</h3>
+                            <p class="mt-2 text-sm text-secondary">Habrá un espacio especial en la recepción.</p>
+                        </div>
+                        <div class="card p-8" data-aos="fade-up" data-aos-delay="300">
+                            <h3 class="text-xl font-semibold title-accent">Tu Elección</h3>
+                            <p class="mt-2 text-sm text-secondary">Cualquier obsequio será apreciado.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Confirmación de Asistencia -->
+            <section class="py-24 px-6 section-bg-alt">
+                <div class="max-w-2xl mx-auto text-center">
+                    <div data-aos="fade-up">
+                        <h3 class="font-great-vibes text-6xl title-cursive">Confirma tu Asistencia</h3>
+                        <p class="mt-4 text-lg text-secondary">Por favor, confirma antes del 01 de Octubre, 2025. <br>¡Será
+                            un honor contar contigo!</p>

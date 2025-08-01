@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invitación XV Años - Ximena</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #fce4ec;
+      padding: 2rem;
+    }
+    .card {
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      max-width: 500px;
+      margin: 2rem auto;
+    }
+    input {
+      padding: 0.5rem;
+      font-size: 1rem;
+      width: 70%;
+    }
+    button {
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      background-color: #e91e63;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Pantalla de ingreso de código -->
+  <div class="card" id="access-screen">
+    <h2>Ingresa tu código de invitación</h2>
+    <input type="text" id="code-input" placeholder="Ej. FAMGARCIA">
+    <br>
+    <button onclick="verificarCodigo()">Ver invitación</button>
+  </div>
+
+  <!-- Invitación personalizada -->
+  <div class="card hidden" id="invitacion">
+    <h1>¡Estás invitado!</h1>
+    <h2>A los XV Años de Ximena</h2>
+    <p><strong>Invitados:</strong> <span id="nombres"></span></p>
+    <p><strong>Número de personas:</strong> <span id="cantidad"></span></p>
+    <p id="mensaje" style="color: #880e4f; font-style: italic;"></p>
+  </div>
+
+  <!-- Carga JavaScript -->
+  <script src="codigo.js"></script>
+</body>
+</html>

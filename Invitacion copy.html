@@ -6,22 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mis XV Años - Ximena</title>
 
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 
-    <!-- AOS (Animate On Scroll) Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!--Enlace a Estilos-->
     <link rel="stylesheet" href="styles copy.css">
 </head>
 
 <body>
 
-    <!-- Hero Section -->
     <header class="hero-bg text-white min-h-screen flex flex-col items-center justify-center text-center p-6 relative">
         <div data-aos="zoom-in" data-aos-duration="1500">
             <h2 class="text-2xl md:text-3xl tracking-widest uppercase font-light">Mis XV Años</h2>
@@ -30,19 +30,29 @@
             <h3 class="text-2xl md:text-3xl font-light title-accent mt-4">25 de Octubre de 2025</h3>
         </div>
 
-        <!-- Calendario -->
         <div id="countdown" class="mt-16 w-full max-w-2xl" data-aos="fade-up" data-aos-delay="500">
             <div class="grid grid-cols-4 gap-4 text-center text-white">
-                <div><div id="days" class="text-4xl md:text-5xl font-semibold">00</div><div class="mt-1 text-xs uppercase tracking-wider">Días</div></div>
-                <div><div id="hours" class="text-4xl md:text-5xl font-semibold">00</div><div class="mt-1 text-xs uppercase tracking-wider">Horas</div></div>
-                <div><div id="minutes" class="text-4xl md:text-5xl font-semibold">00</div><div class="mt-1 text-xs uppercase tracking-wider">Minutos</div></div>
-                <div><div id="seconds" class="text-4xl md:text-5xl font-semibold">00</div><div class="mt-1 text-xs uppercase tracking-wider">Segundos</div></div>
+                <div>
+                    <div id="days" class="text-4xl md:text-5xl font-semibold">00</div>
+                    <div class="mt-1 text-xs uppercase tracking-wider">Días</div>
+                </div>
+                <div>
+                    <div id="hours" class="text-4xl md:text-5xl font-semibold">00</div>
+                    <div class="mt-1 text-xs uppercase tracking-wider">Horas</div>
+                </div>
+                <div>
+                    <div id="minutes" class="text-4xl md:text-5xl font-semibold">00</div>
+                    <div class="mt-1 text-xs uppercase tracking-wider">Minutos</div>
+                </div>
+                <div>
+                    <div id="seconds" class="text-4xl md:text-5xl font-semibold">00</div>
+                    <div class="mt-1 text-xs uppercase tracking-wider">Segundos</div>
+                </div>
             </div>
         </div>
     </header>
 
     <main>
-        <!-- Sección de palabras de la Quinceañera -->
         <section class="py-24 px-6 section-bg">
             <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
                 <h2 class="font-great-vibes text-6xl md:text-7xl title-cursive mb-4">Un Sueño Hecho Realidad</h2>
@@ -54,7 +64,9 @@
             </div>
         </section>
 
-        <!-- Sección de Familia -->
+
+
+        <!-- Presentación de la Familia -->
         <section class="py-24 px-6 section-bg-alt pattern-bg">
             <div class="max-w-5xl mx-auto text-center" data-aos="fade-up">
                 <h2 class="font-great-vibes text-6xl md:text-7xl title-cursive mb-16">Con el Amor de mi Familia</h2>
@@ -74,7 +86,8 @@
             </div>
         </section>
 
-        <!-- Sección Ubicación y Vestimenta -->
+
+        <!--Ubicación y Fecha-->
         <section class="py-24 px-6 section-bg">
             <div class="max-w-6xl mx-auto">
                 <div class="text-center mb-16" data-aos="fade-up">
@@ -82,23 +95,43 @@
                     <p class="text-lg text-secondary">Estos son los lugares donde escribiremos esta nueva historia.</p>
                 </div>
                 <div class="grid md:grid-cols-2 gap-8 items-start">
-                    <div data-aos="zoom-in-up" class="text-center card p-8 flex flex-col">
-                        <h3 class="font-great-vibes text-5xl title-cursive mb-2">Ceremonia</h3>
-                        <p class="text-lg font-semibold text-primary">Parroquia de San Francisco de Asís</p>
-                        <p class="text-secondary text-sm">Miguel Hidalgo Mz 031, Coacalco, Méx.</p>
-                        <p class="font-bold text-lg mt-4 title-accent">6:00 PM</p>
+                    <div data-aos="zoom-in-left" class="text-center card p-8 flex flex-col justify-between">
+                        <div>
+                            <h2 class="font-great-vibes text-5xl royal-blue-text mb-4">Ceremonia Religiosa</h2>
+                            <p class="text-xl font-semibold">Parroquia de San Francisco de Asís Coacalco</p>
+                            <p>Miguel Hidalgo Manzana 031, Coacalco de Berriozabal, Méx.</p>
+                            <p class="font-bold text-lg mt-2">25 de Octubre de 2025 - 6:00 PM</p>
+                            <div class="mt-4 flex flex-wrap justify-center gap-2">
+                                <a id="gcal-ceremonia-map" href="#" target="_blank"
+                                    class="inline-block bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">Añadir
+                                    a Google Calendar</a>
+                                <a id="ical-ceremonia" href="#"
+                                    class="inline-block bg-gray-200 text-gray-800 text-sm font-semibold px-3 py-1 rounded-full">Añadir
+                                    a iCal/Outlook</a>
+                            </div>
+                        </div>
                         <a href="https://maps.app.goo.gl/JKvnxS2CxU49ALxo8" target="_blank"
-                            class="btn-primary font-semibold py-2 px-6 rounded-full mt-6 self-center">Ver en Mapa</a>
+                            class="inline-block bg-blue-700 text-white font-bold py-2 px-6 rounded-full hover:bg-blue-800 transition duration-300 mt-6">Ver
+                            en Mapa</a>
                     </div>
-                     <div data-aos="zoom-in-left" class="text-center card p-8 flex flex-col justify-between">
+                    <div data-aos="zoom-in-left" class="text-center card p-8 flex flex-col justify-between">
                         <div>
                             <h2 class="font-great-vibes text-5xl royal-blue-text mb-4">Recepción</h2>
                             <p class="text-xl font-semibold">Salón "Fiesta Colonial"</p>
                             <p>C. Cenzontles 66, Parque Residencial Coacalco, Mex.</p>
                             <p class="font-bold text-lg mt-2">25 de Octubre de 2025 - 7:30 PM</p>
-                            <div class="mt-4"><a id="gcal-recepcion" href="#" target="_blank" class="inline-block bg-blue-100 text-blue-800 text-sm font-semibold mr-2 px-3 py-1 rounded-full">Añadir a Google Calendar</a><a id="ical-recepcion" href="#" class="inline-block bg-gray-200 text-gray-800 text-sm font-semibold px-3 py-1 rounded-full">Añadir a iCal/Outlook</a></div>
+                            <div class="mt-4 flex flex-wrap justify-center gap-2">
+                                <a id="gcal-recepcion" href="#" target="_blank"
+                                    class="inline-block bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">Añadir
+                                    a Google Calendar</a>
+                                <a id="ical-recepcion" href="#"
+                                    class="inline-block bg-gray-200 text-gray-800 text-sm font-semibold px-3 py-1 rounded-full">Añadir
+                                    a iCal/Outlook</a>
+                            </div>
                         </div>
-                        <a href="https://maps.app.goo.gl/41XVjBF7QMAguGcx8" target="_blank" class="inline-block bg-blue-700 text-white font-bold py-2 px-6 rounded-full hover:bg-blue-800 transition duration-300 mt-6">Ver en Mapa</a>
+                        <a href="https://maps.app.goo.gl/2F8pG2V8QeZ1Xy9A7" target="_blank"
+                            class="inline-block bg-blue-700 text-white font-bold py-2 px-6 rounded-full hover:bg-blue-800 transition duration-300 mt-6">Ver
+                            en Mapa</a>
                     </div>
                 </div>
                 <div class="max-w-md mx-auto mt-16" data-aos="fade-up">
@@ -116,156 +149,192 @@
             </div>
         </section>
 
-        <!-- Sección de Itinerario + Menú -->
+
+        <!-- Itinerario -->
         <section class="py-24 px-6 section-bg-alt pattern-bg">
-        <div class="max-w-3xl mx-auto" data-aos="fade-up">
-            <!-- Itinerario -->
-            <div class="text-center mb-16">
-            <h2 class="font-great-vibes text-6xl md:text-7xl title-cursive mb-4">Itinerario</h2>
-            <p class="text-lg text-secondary">Una noche llena de momentos inolvidables.</p>
-            </div>
-            <div class="max-w-md mx-auto mb-20">
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <p class="font-semibold text-lg text-primary">6:00 PM</p>
-                <p class="text-secondary">Ceremonia Religiosa</p>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <p class="font-semibold text-lg text-primary">7:30 PM</p>
-                <p class="text-secondary">Entreada al Salón</p>
-                </p>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <p class="font-semibold text-lg text-primary">8:30 PM</p>
-                <p class="text-secondary">Cena</p>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <p class="font-semibold text-lg text-primary">9:30 PM</p>
-                <p class="text-secondary">Vals y Brindis Familiar</p>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <p class="font-semibold text-lg text-primary">10:00 PM</p>
-                <p class="text-secondary">¡La fiesta comienza!</p>
-            </div>
-            </div>
+            <div class="max-w-3xl mx-auto" data-aos="fade-up">
+                <div class="text-center mb-16">
+                    <h2 class="font-great-vibes text-6xl md:text-7xl title-cursive mb-4">Nuestro Itinerario</h2>
+                    <p class="text-lg text-secondary">Una noche mágica llena de momentos especiales.</p>
+                </div>
 
-            <!-- Menú de la Cena -->
-            <div class="text-center" data-aos="fade-up" data-aos-delay="200">
-            <h2 class="font-great-vibes text-5xl md:text-6xl title-cursive mb-6">Nuestro Menú</h2>
-            <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8 shadow-lg max-w-2xl mx-auto text-left text-secondary text-lg space-y-6 border border-white/10">
-                <div>
-                <p class="text-primary font-semibold uppercase tracking-wide text-sm mb-1">Entrada</p>
-                <p>Crema de espárragos con crujientes de jamón serrano</p>
-                </div>
-                <div>
-                <p class="text-primary font-semibold uppercase tracking-wide text-sm mb-1">Plato Fuerte</p>
-                <p>Filete de res en salsa de vino tinto acompañado de puré de papa trufado</p>
-                </div>
-                <div>
-                <p class="text-primary font-semibold uppercase tracking-wide text-sm mb-1">Postre</p>
-                <p>Pastel de chocolate con centro líquido y frutos rojos</p>
+                <!-- Itinerario 1-->
+                <div class="max-w-md mx-auto mb-20 relative">
+                    <div class="timeline-item flex items-start">
+                        <div class="timeline-dot"></div>
+                        <div class="ml-8 flex-1">
+                            <p class="font-semibold text-xl text-primary flex items-center gap-2 mb-1">
+                                <i class="fas fa-church text-gold-accent"></i> 6:00 PM
+                            </p>
+                            <p class="text-secondary text-lg">Ceremonia Religiosa - Unámonos en fe para
+                                bendecir este nuevo comienzo.</p>
+                        </div>
+                    </div>
+
+                    <!-- Itinerario 2-->
+                    <div class="timeline-item flex items-start">
+                        <div class="timeline-dot"></div>
+                        <div class="ml-8 flex-1">
+                            <p class="font-semibold text-xl text-primary flex items-center gap-2 mb-1">
+                                <i class="fas fa-champagne-glasses text-gold-accent"></i> 7:30 PM
+                            </p>
+                            <p class="text-secondary text-lg">Entrada al Salón - El inicio de la celebración con
+                                risas y alegría.</p>
+                        </div>
+                    </div>
+
+                    <!-- Itinerario 3-->
+                    <div class="timeline-item flex items-start">
+                        <div class="timeline-dot"></div>
+                        <div class="ml-8 flex-1">
+                            <p class="font-semibold text-xl text-primary flex items-center gap-2 mb-1">
+                                <i class="fas fa-utensils text-gold-accent"></i> 8:20 PM
+                            </p>
+                            <p class="text-secondary text-lg">Primer Baile</p>
+                        </div>
+                    </div>
+
+                    <!-- Itinerario 4-->
+                    <div class="timeline-item flex items-start">
+                        <div class="timeline-dot"></div>
+                        <div class="ml-8 flex-1">
+                            <p class="font-semibold text-xl text-primary flex items-center gap-2 mb-1">
+                                <i class="fas fa-gift text-gold-accent"></i> 9:00 PM
+                            </p>
+                            <p class="text-secondary text-lg">Cena </p>
+                        </div>
+                    </div>
+
+                    <!-- Itinerario 5-->
+                    <div class="timeline-item flex items-start">
+                        <div class="timeline-dot"></div>
+                        <div class="ml-8 flex-1">
+                            <p class="font-semibold text-xl text-primary flex items-center gap-2 mb-1">
+                                <i class="fas fa-music text-gold-accent"></i> 10:00 PM
+                            </p>
+                            <p class="text-secondary text-lg">Ceremonia.</p>
+                        </div>
+                    </div>
+
+                    <!-- Itinerario 6-->
+                    <div class="timeline-item flex items-start">
+                        <div class="timeline-dot"></div>
+                        <div class="ml-8 flex-1">
+                            <p class="font-semibold text-xl text-primary flex items-center gap-2 mb-1">
+                                <i class="fas fa-music text-gold-accent"></i> 11:00 PM
+                            </p>
+                            <p class="text-secondary text-lg">¡Que de inicio la Fiesta!.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            </div>
-        </div>
         </section>
 
 
-        <!-- Sección de Recuerdos -->
+        <!-- Galería de Recuerdos -->
         <section class="py-24 px-6 section-bg">
-            <div class="max-w-6xl mx-auto text-center" data-aos="fade-up">
-                <h2 class="font-great-vibes text-6xl md:text-7xl title-cursive mb-16">Mis Recuerdos</h2>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <div class="gallery-thumb" data-aos="fade-up" onclick="openGalleryModal('fotos/foto1.jpeg')"><img
-                            src="fotos/foto1.jpeg" alt="Recuerdo de Ximena 1" class="w-full h-64 object-cover">
-                        <div class="overlay">
-                            <p class="text-white text-lg font-semibold">Ver Foto</p>
-                        </div>
-                    </div>
-                    <div class="gallery-thumb" data-aos="fade-up" data-aos-delay="200"
-                        onclick="openGalleryModal('fotos/foto2.jpeg')"><img src="fotos/foto2.jpeg"
-                            alt="Recuerdo de Ximena 2" class="w-full h-64 object-cover">
-                        <div class="overlay">
-                            <p class="text-white text-lg font-semibold">Ver Foto</p>
-                        </div>
-                    </div>
-                    <div class="gallery-thumb" data-aos="fade-up" data-aos-delay="400"
-                        onclick="openGalleryModal('fotos/foto3.jpeg')"><img src="fotos/foto3.jpeg"
-                            alt="Recuerdo de Ximena 3" class="w-full h-64 object-cover">
-                        <div class="overlay">
-                            <p class="text-white text-lg font-semibold">Ver Foto</p>
-                        </div>
-                    </div>
-                    <div class="gallery-thumb" data-aos="fade-up" data-aos-delay="600"
-                        onclick="openGalleryModal('fotos/foto4.jpeg')"><img src="fotos/foto4.jpeg"
-                            alt="Recuerdo de Ximena 4" class="w-full h-64 object-cover">
-                        <div class="overlay">
-                            <p class="text-white text-lg font-semibold">Ver Foto</p>
-                        </div>
-                    </div>
-                    <div class="gallery-thumb" data-aos="fade-up" data-aos-delay="800"
-                        onclick="openGalleryModal('fotos/foto5.jpeg')"><img src="fotos/foto5.jpeg"
-                            alt="Recuerdo de Ximena 5" class="w-full h-64 object-cover">
-                        <div class="overlay">
-                            <p class="text-white text-lg font-semibold">Ver Foto</p>
-                        </div>
-                    </div>
-                    <div class="gallery-thumb" data-aos="fade-up" data-aos-delay="1000"
-                        onclick="openGalleryModal('fotos/foto6.jpeg')"><img src="fotos/foto6.jpeg"
-                            alt="Recuerdo de Ximena 6" class="w-full h-64 object-cover">
-                        <div class="overlay">
-                            <p class="text-white text-lg font-semibold">Ver Foto</p>
-                        </div>
-                    </div>
+            <div class="max-w-6xl mx-auto text-center">
+                <h2 class="font-great-vibes text-6xl md:text-7xl title-cursive mb-12">Mis Recuerdos</h2>
 
-                    <div class="gallery-thumb" data-aos="fade-up" data-aos-delay="1200"
-                        onclick="openGalleryModal('fotos/foto7.jpeg')"><img src="fotos/foto7.jpeg"
-                            alt="Recuerdo de Ximena 7" class="w-full h-64 object-cover">
-                        <div class="overlay">
-                            <p class="text-white text-lg font-semibold">Ver Foto</p>
-                        </div>
-                    </div>
+                <div class="relative">
+                    <div id="gallery-container"
+                        class="flex overflow-x-auto space-x-4 sm:space-x-6 py-4 scroll-container">
 
-                    <div class="gallery-thumb" data-aos="fade-up" data-aos-delay="1400"
-                        onclick="openGalleryModal('fotos/foto8.jpeg')"><img src="fotos/foto8.jpeg"
-                            alt="Recuerdo de Ximena 8" class="w-full h-64 object-cover">
-                        <div class="overlay">
-                            <p class="text-white text-lg font-semibold">Ver Foto</p>
+                        <div class="gallery-thumb flex-shrink-0 w-4/5 sm:w-1/2 md:w-1/3">
+                            <img src="fotos/foto1.jpeg" alt="Recuerdo de Ximena 1" class="w-full h-96 object-cover">
+                            <div class="overlay">
+                                <p class="text-white text-lg font-semibold">Ver Foto</p>
+                            </div>
+                        </div>
+
+                        <div class="gallery-thumb flex-shrink-0 w-4/5 sm:w-1/2 md:w-1/3">
+                            <img src="fotos/foto2.jpeg" alt="Recuerdo de Ximena 2" class="w-full h-96 object-cover">
+                            <div class="overlay">
+                                <p class="text-white text-lg font-semibold">Ver Foto</p>
+                            </div>
+                        </div>
+
+                        <div class="gallery-thumb flex-shrink-0 w-4/5 sm:w-1/2 md:w-1/3">
+                            <img src="fotos/foto3.jpeg" alt="Recuerdo de Ximena 3" class="w-full h-96 object-cover">
+                            <div class="overlay">
+                                <p class="text-white text-lg font-semibold">Ver Foto</p>
+                            </div>
+                        </div>
+
+                        <div class="gallery-thumb flex-shrink-0 w-4/5 sm:w-1/2 md:w-1/3">
+                            <img src="fotos/foto4.jpeg" alt="Recuerdo de Ximena 4" class="w-full h-96 object-cover">
+                            <div class="overlay">
+                                <p class="text-white text-lg font-semibold">Ver Foto</p>
+                            </div>
+                        </div>
+
+                        <div class="gallery-thumb flex-shrink-0 w-4/5 sm:w-1/2 md:w-1/3">
+                            <img src="fotos/foto5.jpeg" alt="Recuerdo de Ximena 5" class="w-full h-96 object-cover">
+                            <div class="overlay">
+                                <p class="text-white text-lg font-semibold">Ver Foto</p>
+                            </div>
+                        </div>
+
+                        <div class="gallery-thumb flex-shrink-0 w-4/5 sm:w-1/2 md:w-1/3">
+                            <img src="fotos/foto6.jpeg" alt="Recuerdo de Ximena 6" class="w-full h-96 object-cover">
+                            <div class="overlay">
+                                <p class="text-white text-lg font-semibold">Ver Foto</p>
+                            </div>
+                        </div>
+
+                        <div class="gallery-thumb flex-shrink-0 w-4/5 sm:w-1/2 md:w-1/3">
+                            <img src="fotos/foto7.jpeg" alt="Recuerdo de Ximena 7" class="w-full h-96 object-cover">
+                            <div class="overlay">
+                                <p class="text-white text-lg font-semibold">Ver Foto</p>
+                            </div>
+                        </div>
+
+                        <div class="gallery-thumb flex-shrink-0 w-4/5 sm:w-1/2 md:w-1/3">
+                            <img src="fotos/foto8.jpeg" alt="Recuerdo de Ximena 8" class="w-full h-96 object-cover">
+                            <div class="overlay">
+                                <p class="text-white text-lg font-semibold">Ver Foto</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-
-        <!-- Sección de Collage-->
-        <section class="py-24 px-6 section-bg-alt">
-        <div class="max-w-5xl mx-auto text-center" data-aos="fade-up">
-            <h2 class="font-great-vibes text-6xl md:text-7xl title-cursive mb-8">Un Mosaico de Momentos</h2>
-
-            <div class="relative mx-auto max-w-4xl rounded-xl overflow-hidden shadow-xl transition duration-300 hover:shadow-2xl">
-            <img src="fotos/CollageXimena.png" alt="Collage de recuerdos de Ximena" class="w-full h-auto object-cover rounded-xl">
+        <!--Código de vestimenta-->
+        <div id="gallery-modal"
+            class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center p-4 z-50 hidden"
+            onclick="closeModal('gallery-modal')">
+            <div class="relative w-full max-w-3xl max-h-full">
+                <button id="modal-close"
+                    class="absolute -top-4 -right-4 md:top-0 md:-right-12 text-white text-5xl font-bold z-20">×</button>
+                <div class="flex justify-center items-center h-full">
+                    <img id="modal-image" src="" alt="Recuerdo en grande"
+                        class="max-w-full max-h-[90vh] rounded-lg shadow-lg object-contain">
+                </div>
             </div>
         </div>
+
+
+        <!--Mosaico de fotos-->
+        <section class="py-24 px-6 section-bg-alt">
+            <div class="max-w-5xl mx-auto text-center" data-aos="fade-up">
+                <h2 class="font-great-vibes text-6xl md:text-7xl title-cursive mb-8">Un Mosaico de Momentos</h2>
+
+                <div
+                    class="relative mx-auto max-w-4xl rounded-xl overflow-hidden shadow-xl transition duration-300 hover:shadow-2xl">
+                    <img src="fotos/CollageXimena.png" alt="Collage de recuerdos de Ximena"
+                        class="w-full h-auto object-cover rounded-xl">
+                </div>
+            </div>
         </section>
 
 
-        <!-- Sección de Regalo -->
+        <!-- Mesa de Regalos -->
         <section class="py-24 px-6 section-bg pattern-bg">
             <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
                 <h2 class="font-great-vibes text-6xl md:text-7xl title-cursive mb-6">Mesa de Regalos</h2>
                 <p class="text-lg max-w-2xl mx-auto text-secondary">Tu presencia es el mejor regalo. Si además deseas
                     obsequiarme algo, aquí te presento algunas opciones con mucho cariño.</p>
-                <div class="mt-12 grid md:grid-cols-3 gap-8">
-                    <div class="card p-8" data-aos="fade-up" data-aos-delay="100">
-                        <h3 class="text-xl font-semibold title-accent">Amazon</h3>
-                        <p class="mt-2 text-sm text-secondary">Encuentra mi lista de deseos en Amazon.</p>
-                         <a href="https://www.amazon.com.mx/registries/gl/guest-view/379XFTJPWXI9X?ref_=cm_sw_r_cp_ud_ggr-subnav-share_EAP5EG32XG9SVV28WY05"
-                            target="_blank" class="btn-primary font-semibold py-2 px-5 rounded-full mt-6 inline-block text-sm">Ver Lista</a>
-                    </div>
+                <div class="mt-12 grid md:grid-cols-3 gap-8 justify-center">
                     <div class="card p-8" data-aos="fade-up" data-aos-delay="200">
                         <h3 class="text-xl font-semibold title-accent">Lluvia de Sobres</h3>
                         <p class="mt-2 text-sm text-secondary">Habrá un espacio especial en la recepción.</p>
@@ -278,12 +347,13 @@
             </div>
         </section>
 
-        <!-- Sección de Confirmación de asistencia -->
+
+        <!-- Confirmación de Asistencia -->
         <section class="py-24 px-6 section-bg-alt">
             <div class="max-w-2xl mx-auto text-center">
                 <div data-aos="fade-up">
                     <h3 class="font-great-vibes text-6xl title-cursive">Confirma tu Asistencia</h3>
-                    <p class="mt-4 text-lg text-secondary">Por favor, confirma antes del 05 de Octubre, 2025. <br>¡Será
+                    <p class="mt-4 text-lg text-secondary">Por favor, confirma antes del 01 de Octubre, 2025. <br>¡Será
                         un honor contar contigo!</p>
                     <div class="mt-8">
                         <a href="https://docs.google.com/forms/d/e/1FAIpQLSefC_Sa0ca9Ak9ATuxm21OiTLf7hNTFuKb5v0ZyKg1CPpVSnA/viewform?usp=header"
@@ -295,23 +365,34 @@
         </section>
 
     </main>
-
+    <!--Pie de página-->
     <footer class="text-center py-12 section-bg">
         <p class="font-great-vibes text-4xl title-cursive">¡Te espero!</p>
         <p class="text-sm text-secondary mt-2">Ximena | Mis XV Años 2025</p>
     </footer>
 
-    <!-- Modals -->
-    <div id="gallery-modal" class="modal-container fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center p-4 z-50 hidden" onclick="closeModal('gallery-modal')"><img id="modal-img" src="" alt="Vista ampliada" class="max-w-full max-h-full rounded-lg" onclick="event.stopPropagation()"><button class="absolute top-4 right-4 text-white text-4xl font-bold" onclick="closeModal('gallery-modal')">&times;</button></div>
-    <div id="dress-code-modal" class="modal-container fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 z-50 hidden" onclick="closeModal('dress-code-modal')">
-        <div class="modal-content w-full max-w-sm rounded-lg p-6 relative text-center" onclick="event.stopPropagation()">
-            <button onclick="closeModal('dress-code-modal')" class="absolute top-3 right-4 text-primary text-2xl font-bold">&times;</button>
+
+
+    <!-- Modal de Código de Vestimenta -->
+    <div id="dress-code-modal"
+        class="modal-container fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 z-50 hidden"
+        onclick="closeModal('dress-code-modal')">
+        <div class="modal-content w-full max-w-sm rounded-lg p-6 relative text-center"
+            onclick="event.stopPropagation()">
+            <button onclick="closeModal('dress-code-modal')"
+                class="absolute top-3 right-4 text-primary text-2xl font-bold">×</button>
             <h3 class="font-great-vibes text-4xl title-cursive mb-4">Ejemplo de Vestimenta</h3>
-            <img src="fotos/vestimenta.png" alt="Ejemplo de vestimenta formal" class="w-full h-auto rounded-lg shadow-lg">
+            <img src="fotos/vestimenta.png" alt="Ejemplo de vestimenta formal"
+                class="w-full h-auto rounded-lg shadow-lg">
         </div>
     </div>
 
-    <audio id="bg-music" loop><source src="assets/audio/fondo.mp3" type="audio/mpeg"></audio>
+
+
+    <!-- Música de Fondo -->
+    <audio id="bg-music" loop>
+        <source src="assets/audio/fondo.mp3" type="audio/mpeg">
+    </audio>
     <button id="music-toggle"
         class="fixed bottom-5 right-5 bg-blue-900/50 backdrop-blur-sm text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg z-40 border border-white/20"><svg
             id="play-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
@@ -326,69 +407,13 @@
                 d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg></button>
 
+
+
+    <!--Enlace a JavaScript-->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({ once: true, duration: 1000 });
 
-        const countdown = () => {
-            const countDate = new Date("October 25, 2025 18:00:00").getTime();
-            const now = new Date().getTime();
-            const gap = countDate - now;
-
-            if (gap < 0) {
-                const countdownEl = document.getElementById('countdown');
-                if (countdownEl) countdownEl.innerHTML = '<h3 class="text-3xl font-semibold">¡El gran día ha llegado!</h3>';
-                return;
-            }
-
-            document.getElementById('days').innerText = Math.floor(gap / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
-            document.getElementById('hours').innerText = Math.floor((gap % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
-            document.getElementById('minutes').innerText = Math.floor((gap % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
-            document.getElementById('seconds').innerText = Math.floor((gap % (1000 * 60)) / 1000).toString().padStart(2, '0');
-        };
-        setInterval(countdown, 1000);
-
-        function openModal(modalId) {
-            const modal = document.getElementById(modalId);
-            if (modal) modal.classList.remove('hidden');
-        }
-
-        function closeModal(modalId) {
-            const modal = document.getElementById(modalId);
-            if (modal) modal.classList.add('hidden');
-        }
-
-        function openGalleryModal(src) {
-            const modalImg = document.getElementById('modal-img');
-            if (modalImg) modalImg.src = src;
-            openModal('gallery-modal');
-        }
-
-        document.getElementById('dress-code-btn').addEventListener('click', () => {
-            openModal('dress-code-modal');
-        });
-
-        const music = document.getElementById('bg-music');
-        const musicToggle = document.getElementById('music-toggle');
-        const playIcon = musicToggle.querySelector('#play-icon');
-        const pauseIcon = musicToggle.querySelector('#pause-icon');
-        let isPlaying = false;
-        musicToggle.addEventListener('click', () => {
-            isPlaying = !isPlaying;
-            if (isPlaying) {
-                music.play();
-                if (playIcon) playIcon.classList.add('hidden');
-                if (pauseIcon) pauseIcon.classList.remove('hidden');
-            } else {
-                music.pause();
-                if (playIcon) playIcon.classList.remove('hidden');
-                if (pauseIcon) pauseIcon.classList.add('hidden');
-            }
-        });
-    </script>
-
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="scripts copy.js"></script>
+    <script src="PruebaBD/codigo.js"></script>
 </body>
 
 </html>
