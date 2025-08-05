@@ -18,7 +18,51 @@
 
     <!--Enlace a Estilos-->
     <link rel="stylesheet" href="styles copy.css">
-</head>
+    <style> 
+        .mosaic-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 180px;
+    gap: 1rem;
+}
+
+.mosaic-item {
+    overflow: hidden;
+    border-radius: 1rem;
+    box-shadow: 0 4px 24px rgba(0,23,66,0.14);
+    background: #fff;
+    cursor: pointer;
+    transition: transform .25s, box-shadow .3s;
+}
+.mosaic-item:hover {
+    transform: scale(1.03) rotate(-1deg);
+    box-shadow: 0 8px 32px rgba(0,23,66,0.22);
+}
+
+.mosaic-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: filter .3s;
+}
+.mosaic-item:hover img {
+    filter: brightness(1.07) saturate(1.1);
+}
+
+.mosaic-item.wide { grid-column: span 2; }
+.mosaic-item.tall { grid-row: span 2; }
+
+@media (max-width: 900px) {
+    .mosaic-grid { grid-template-columns: repeat(2, 1fr);}
+    .mosaic-item.wide, .mosaic-item.tall { grid-column: span 2; grid-row: span 1; }
+}
+@media (max-width: 600px) {
+    .mosaic-grid { grid-template-columns: 1fr;}
+    .mosaic-item { grid-column: span 1; grid-row: span 1;}
+}
+
+    </style>
+
 
 <body>
 
@@ -129,7 +173,7 @@
                                     a iCal/Outlook</a>
                             </div>
                         </div>
-                        <a href="https://maps.app.goo.gl/2F8pG2V8QeZ1Xy9A7" target="_blank"
+                        <a href="https://maps.app.goo.gl/H4MGff8uYw9d8VwD9" target="_blank"
                             class="inline-block bg-blue-700 text-white font-bold py-2 px-6 rounded-full hover:bg-blue-800 transition duration-300 mt-6">Ver
                             en Mapa</a>
                     </div>
@@ -151,81 +195,19 @@
 
 
         <!-- Itinerario -->
-        <section class="py-24 px-6 section-bg-alt pattern-bg">
+        <section class="py-24 px-6 bg-[#001742]">
             <div class="max-w-3xl mx-auto" data-aos="fade-up">
                 <div class="text-center mb-16">
-                    <h2 class="font-great-vibes text-6xl md:text-7xl title-cursive mb-4">Nuestro Itinerario</h2>
-                    <p class="text-lg text-secondary">Una noche mágica llena de momentos especiales.</p>
+                    <h2 class="font-great-vibes text-6xl md:text-7xl text-white mb-4">Nuestro Itinerario</h2>
+                    <p class="text-lg text-slate-300">Una noche mágica llena de momentos especiales.</p>
                 </div>
-
-                <!-- Itinerario 1-->
-                <div class="max-w-md mx-auto mb-20 relative">
-                    <div class="timeline-item flex items-start">
-                        <div class="timeline-dot"></div>
-                        <div class="ml-8 flex-1">
-                            <p class="font-semibold text-xl text-primary flex items-center gap-2 mb-1">
-                                <i class="fas fa-church text-gold-accent"></i> 6:00 PM
-                            </p>
-                            <p class="text-secondary text-lg">Ceremonia Religiosa - Unámonos en fe para
-                                bendecir este nuevo comienzo.</p>
-                        </div>
-                    </div>
-
-                    <!-- Itinerario 2-->
-                    <div class="timeline-item flex items-start">
-                        <div class="timeline-dot"></div>
-                        <div class="ml-8 flex-1">
-                            <p class="font-semibold text-xl text-primary flex items-center gap-2 mb-1">
-                                <i class="fas fa-champagne-glasses text-gold-accent"></i> 7:30 PM
-                            </p>
-                            <p class="text-secondary text-lg">Entrada al Salón - El inicio de la celebración con
-                                risas y alegría.</p>
-                        </div>
-                    </div>
-
-                    <!-- Itinerario 3-->
-                    <div class="timeline-item flex items-start">
-                        <div class="timeline-dot"></div>
-                        <div class="ml-8 flex-1">
-                            <p class="font-semibold text-xl text-primary flex items-center gap-2 mb-1">
-                                <i class="fas fa-utensils text-gold-accent"></i> 8:20 PM
-                            </p>
-                            <p class="text-secondary text-lg">Primer Baile</p>
-                        </div>
-                    </div>
-
-                    <!-- Itinerario 4-->
-                    <div class="timeline-item flex items-start">
-                        <div class="timeline-dot"></div>
-                        <div class="ml-8 flex-1">
-                            <p class="font-semibold text-xl text-primary flex items-center gap-2 mb-1">
-                                <i class="fas fa-gift text-gold-accent"></i> 9:00 PM
-                            </p>
-                            <p class="text-secondary text-lg">Cena </p>
-                        </div>
-                    </div>
-
-                    <!-- Itinerario 5-->
-                    <div class="timeline-item flex items-start">
-                        <div class="timeline-dot"></div>
-                        <div class="ml-8 flex-1">
-                            <p class="font-semibold text-xl text-primary flex items-center gap-2 mb-1">
-                                <i class="fas fa-music text-gold-accent"></i> 10:00 PM
-                            </p>
-                            <p class="text-secondary text-lg">Ceremonia.</p>
-                        </div>
-                    </div>
-
-                    <!-- Itinerario 6-->
-                    <div class="timeline-item flex items-start">
-                        <div class="timeline-dot"></div>
-                        <div class="ml-8 flex-1">
-                            <p class="font-semibold text-xl text-primary flex items-center gap-2 mb-1">
-                                <i class="fas fa-music text-gold-accent"></i> 11:00 PM
-                            </p>
-                            <p class="text-secondary text-lg">¡Que de inicio la Fiesta!.</p>
-                        </div>
-                    </div>
+                <div class="relative">
+                    <div class="timeline-item"><div class="timeline-dot"></div><div class="ml-8 flex-1"><p class="font-semibold text-xl text-white flex items-center gap-3 mb-1"><i class="fa-solid fa-church w-5 text-center text-[#e6e9f2]"></i> 6:00 PM</p><p class="text-slate-300 text-lg">Ceremonia Religiosa</p></div></div>
+                    <div class="timeline-item"><div class="timeline-dot"></div><div class="ml-8 flex-1"><p class="font-semibold text-xl text-white flex items-center gap-3 mb-1"><i class="fa-solid fa-champagne-glasses w-5 text-center text-[#e6e9f2]"></i> 7:30 PM</p><p class="text-slate-300 text-lg">Recepción y Cóctel de Bienvenida</p></div></div>
+                    <div class="timeline-item"><div class="timeline-dot"></div><div class="ml-8 flex-1"><p class="font-semibold text-xl text-white flex items-center gap-3 mb-1"><i class="fa-solid fa-person-walking w-5 text-center text-[#e6e9f2]"></i> 8:20 PM</p><p class="text-slate-300 text-lg">Vals y Primer Baile</p></div></div>
+                    <div class="timeline-item"><div class="timeline-dot"></div><div class="ml-8 flex-1"><p class="font-semibold text-xl text-white flex items-center gap-3 mb-1"><i class="fa-solid fa-utensils w-5 text-center text-[#e6e9f2]"></i> 9:00 PM</p><p class="text-slate-300 text-lg">Cena</p></div></div>
+                    <div class="timeline-item"><div class="timeline-dot"></div><div class="ml-8 flex-1"><p class="font-semibold text-xl text-white flex items-center gap-3 mb-1"><i class="fa-solid fa-cake-candles w-5 text-center text-[#e6e9f2]"></i> 10:00 PM</p><p class="text-slate-300 text-lg">Brindis y Pastel</p></div></div>
+                    <div class="timeline-item"><div class="timeline-dot"></div><div class="ml-8 flex-1"><p class="font-semibold text-xl text-white flex items-center gap-3 mb-1"><i class="fa-solid fa-music w-5 text-center text-[#e6e9f2]"></i> 11:00 PM</p><p class="text-slate-300 text-lg">¡Que inicie la Fiesta!</p></div></div>
                 </div>
             </div>
         </section>
@@ -318,14 +300,19 @@
         <section class="py-24 px-6 section-bg-alt">
             <div class="max-w-5xl mx-auto text-center" data-aos="fade-up">
                 <h2 class="font-great-vibes text-6xl md:text-7xl title-cursive mb-8">Un Mosaico de Momentos</h2>
-
-                <div
-                    class="relative mx-auto max-w-4xl rounded-xl overflow-hidden shadow-xl transition duration-300 hover:shadow-2xl">
-                    <img src="fotos/CollageXimena.png" alt="Collage de recuerdos de Ximena"
-                        class="w-full h-auto object-cover rounded-xl">
+                <div class="mosaic-grid gap-4 mx-auto" style="max-width:900px;">
+                    <div class="mosaic-item"><img src="fotos/foto1.jpeg" alt="Recuerdo 1"></div>
+                    <div class="mosaic-item"><img src="fotos/foto2.jpeg" alt="Recuerdo 2"></div>
+                    <div class="mosaic-item tall"><img src="fotos/foto3.jpeg" alt="Recuerdo 3"></div>
+                    <div class="mosaic-item"><img src="fotos/foto4.jpeg" alt="Recuerdo 4"></div>
+                    <div class="mosaic-item wide"><img src="fotos/foto5.jpeg" alt="Recuerdo 5"></div>
+                    <div class="mosaic-item"><img src="fotos/foto6.jpeg" alt="Recuerdo 6"></div>
+                    <div class="mosaic-item"><img src="fotos/foto7.jpeg" alt="Recuerdo 7"></div>
+                    <div class="mosaic-item tall"><img src="fotos/foto8.jpeg" alt="Recuerdo 8"></div>
                 </div>
             </div>
         </section>
+
 
 
         <!-- Mesa de Regalos -->
@@ -410,7 +397,17 @@
 
 
     <!--Enlace a JavaScript-->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
+
+        // Modal para el mosaico grid
+        document.querySelectorAll('.mosaic-item img').forEach(img => {
+            img.addEventListener('click', () => {
+                modalImage.src = img.src;
+                modal.classList.remove('hidden');
+            });
+        });
+
+    </script>
 
     <script src="scripts copy.js"></script>
     <script src="PruebaBD/codigo.js"></script>

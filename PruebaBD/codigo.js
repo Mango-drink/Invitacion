@@ -1,37 +1,63 @@
-// Base de datos local simulada
-const invitados = {
-  "FAMGARCIA": {
-    nombres: ["Juan García", "María Torres", "Lucía García"],
-    cantidad: 3,
-    mensaje: "¡Qué emoción contar con ustedes en este día tan especial!"
+// Simulación de base de datos de invitados
+const invitadosDB = {
+  "FAMRANGEL": {
+    nombreFamilia: "Familia Rangel",
+    mensaje: "Familia Rangel, nos encantaría contar con su presencia en este día tan especial.",
+    invitados: ["Carlos Rangel", "Marcela Rangel"]
   },
-  "FAMPEREZ": {
-    nombres: ["Luis Pérez", "Andrea Mendoza"],
-    cantidad: 2,
-    mensaje: "Gracias por ser parte de este momento inolvidable."
-  },
-  "FAMLOPEZ": {
-    nombres: ["Carlos López"],
-    cantidad: 1,
-    mensaje: "Nos alegra mucho que puedas acompañarnos."
+  "FAMALBARRAN": {
+    nombreFamilia: "Familia Albarrán",
+    mensaje: "Querida Familia Albarrán, es un honor invitarlos a celebrar junto a Ximena sus XV Años.",
+    invitados: ["Mario Albarrán", "Lupita Albarrán", "Ana Sofía Albarrán"]
   }
+  // Agrega más familias aquí
 };
 
-// Función que verifica el código y muestra la invitación
-function verificarCodigo() {
-  const input = document.getElementById("code-input").value.trim().toUpperCase();
-  const datos = invitados[input];
+const codigoModal = document.getElementById('codigo-modal');
+const codigoInput = document.getElementById('codigo-input');
+const codigoBtn = document.getElementById('codigo-btn');
+const codigoError = document.getElementById('codigo-error');
+const msgPersonalizado = document.getElementById('mensaje-personalizado');
+const familiaNombre = document.getElementById('familia-nombre');
+const familiaMensaje = document.getElementById('familia-mensaje');
+const familiaInvitados = document.getElementById('familia-invitados');
 
-  if (datos) {
-    // Oculta pantalla de acceso
-    document.getElementById("access-screen").classList.add("hidden");
+function mostrarPersonalizado(data) {
+  familiaNombre.textContent = data.nombreFamilia;
+  familiaMensaje.textContent = data.mensaje;
+  familiaInvitados.innerHTML = data.invitados.map(nombre => `<li>${nombre}</li>`).join("");
+  msgPersonalizado.classList.remove('hidden');
+}
 
-    // Muestra la invitación con datos personalizados
-    document.getElementById("invitacion").classList.remove("hidden");
-    document.getElementById("nombres").innerText = datos.nombres.join(", ");
-    document.getElementById("cantidad").innerText = datos.cantidad;
-    document.getElementById("mensaje").innerText = datos.mensaje;
+function validarCodigo() {
+  const code = codigoInput.value.trim().toUpperCase();
+  if (invitadosDB[code]) {
+    codigoModal.classList.add('hidden');
+    mostrarPersonalizado(invitadosDB[code]);
   } else {
-    alert("Código Familiar no válido. Intenta de nuevo.");
+    codigoError.classList.remove('hidden');
   }
 }
+
+codigoBtn.addEventListener('click', validarCodigo);
+codigoInput.addEventListener('keyup', function (e) {
+  if (e.key === 'Enter') validarCodigo();
+  if (!codigoError.classList.contains('hidden')) codigoError.classList.add('hidden');
+});
+
+//Bloquear/desbloquear el scroll del body
+function toggleBodyScroll(disable) {
+    if (disable) {
+        document.body.style.overflow = 'hidden';
+    } else {
+        document.body.style.overflow = '';
+    }
+}
+
+// Cuando el modal aparece
+codigoModal.classList.remove('hidden');
+toggleBodyScroll(true);
+
+// Cuando el modal desaparece tras login
+codigoModal.classList.add('hidden');
+toggleBodyScroll(false);

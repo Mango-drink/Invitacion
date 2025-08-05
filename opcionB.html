@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis XV Años - Ximena</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- AOS (Animate on Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Font Awesome para Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Estilos Internos para Mejoras Visuales -->
+    <style>
+        /* Fuentes personalizadas */
+        .font-great-vibes { font-family: 'Great Vibes', cursive; }
+        .font-montserrat { font-family: 'Montserrat', sans-serif; }
+
+        /* MEJORA: Paleta de Colores Azul Rey Unificada */
+        :root {
+            --royal-dark: #001742;
+            --royal-base: #0a2d6c; /*Un poco más claro para fondos y acentos #0a2d6c */
+            --royal-accent: #e6e9f2; /* Para botones y textos claros */
+        }
+
+        /* MEJORA: Fondo del Hero con el nuevo color y superposición */
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 23, 66, 0.7), rgba(0, 23, 66, 0.7)), url('https://placehold.co/1200x800/001742/FFF?text=Ximena');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* MEJORA: Estilos para la galería con scroll y efecto hover */
+        .scroll-container { -ms-overflow-style: none; scrollbar-width: none; }
+        .scroll-container::-webkit-scrollbar { display: none; }
+        .gallery-thumb {
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            border-radius: 0.75rem;
+        }
+        .gallery-thumb .overlay {
+            position: absolute; inset: 0; background-color: rgba(0, 23, 66, 0.6);
+            display: flex; align-items: center; justify-content: center;
+            opacity: 0; transition: opacity 0.3s ease;
+        }
+        .gallery-thumb:hover .overlay { opacity: 1; }
+
+        /* Estilos para el modal */
+        .modal-container.hidden { display: none; }
+        
+        /* Estilos para la línea de tiempo (timeline) con el nuevo color */
+        .timeline-item { padding-bottom: 2.5rem; position: relative; }
+        .timeline-item:not(:last-child)::before {
+            content: ''; position: absolute; top: 1rem;
+            left: 0.4rem; bottom: -1rem; width: 2px;
+            background-color: var(--royal-accent);
+        }
+        .timeline-dot {
+            position: absolute; left: 0; top: 0.5rem;
+            width: 1rem; height: 1rem; border-radius: 9999px;
+            background-color: var(--royal-accent);
+            border: 2px solid var(--royal-dark);
+        }
+    </style>
+</head>
+
+<body class="bg-[#001742] text-slate-200 font-montserrat">
+
+    <!-- Encabezado Principal (Hero Section) -->
+    <header class="hero-bg text-white min-h-screen flex flex-col items-center justify-center text-center p-6 relative">
+        <div data-aos="zoom-in" data-aos-duration="1500">
+            <h2 class="text-2xl md:text-3xl tracking-widest uppercase font-light">Mis XV Años</h2>
+            <h1 class="font-great-vibes text-8xl md:text-9xl my-2 text-white" style="text-shadow: 2px 2px 8px rgba(0,0,0,0.7);">Ximena</h1>
+            <h3 class="text-2xl md:text-3xl font-light mt-4">25 de Octubre de 2025</h3>
+        </div>
+
+        <!-- Cuenta Regresiva -->
+        <div id="countdown" class="mt-16 w-full max-w-2xl" data-aos="fade-up" data-aos-delay="500">
+            <div class="grid grid-cols-4 gap-4 text-center text-white">
+                <div><div id="days" class="text-4xl md:text-5xl font-semibold">00</div><div class="mt-1 text-xs uppercase tracking-wider">Días</div></div>
+                <div><div id="hours" class="text-4xl md:text-5xl font-semibold">00</div><div class="mt-1 text-xs uppercase tracking-wider">Horas</div></div>
+                <div><div id="minutes" class="text-4xl md:text-5xl font-semibold">00</div><div class="mt-1 text-xs uppercase tracking-wider">Minutos</div></div>
+                <div><div id="seconds" class="text-4xl md:text-5xl font-semibold">00</div><div class="mt-1 text-xs uppercase tracking-wider">Segundos</div></div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Sección de Bienvenida -->
+        <section class="py-24 px-6">
+            <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
+                <h2 class="font-great-vibes text-6xl md:text-7xl text-white mb-4">Un Sueño Hecho Realidad</h2>
+                <p class="text-lg max-w-3xl mx-auto text-slate-300">Hoy mi corazón rebosa de alegría al compartir con ustedes el inicio de una nueva etapa. Agradezco a Dios por su amor infinito, a mis padres por su guía incondicional, y a mis padrinos por aceptar ser mis consejeros en este viaje.</p>
+                <div class="w-24 h-px bg-[#0a2d6c] mx-auto my-10"></div>
+                <p class="text-xl font-semibold text-white">Con su presencia, mi celebración estará completa.</p>
+            </div>
+        </section>
+
+        <!-- Presentación de la Familia -->
+        <section class="py-24 px-6 bg-[#001742]">
+            <div class="max-w-5xl mx-auto text-center" data-aos="fade-up">
+                <h2 class="font-great-vibes text-6xl md:text-7xl text-white mb-16">Con el Amor de mi Familia</h2>
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div data-aos="fade-right" class="text-center">
+                        <h3 class="text-2xl font-semibold mb-4 tracking-wider uppercase text-white">Mis Padres</h3>
+                        <p class="text-2xl font-light text-slate-300">Guillermo Rafael Pulido Arenas</p>
+                        <p class="text-2xl font-light text-slate-300">& Adriana Rangel Rangel</p>
+                    </div>
+                    <div data-aos="fade-left" class="text-center">
+                        <h3 class="text-2xl font-semibold mb-4 tracking-wider uppercase text-white">Mis Padrinos</h3>
+                        <p class="text-2xl font-light text-slate-300">María de Jesús Rangel Rivera</p>
+                        <p class="text-2xl font-light text-slate-300">& Héctor Alberto Sandoval Rangel</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ubicación y Fecha -->
+        <section class="py-24 px-6">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <h2 class="font-great-vibes text-6xl md:text-7xl text-white mb-4">Acompáñame a Celebrar</h2>
+                    <p class="text-lg text-slate-300">Estos son los lugares donde escribiremos esta nueva historia.</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8 items-stretch">
+                    <!-- Tarjeta Ceremonia -->
+                    <div data-aos="zoom-in-up" class="text-center bg-[#0a2d6c] rounded-xl p-8 flex flex-col justify-between shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                        <div>
+                            <i class="fas fa-church text-4xl text-[#e6e9f2] mb-4"></i>
+                            <h2 class="font-great-vibes text-5xl text-white mb-4">Ceremonia Religiosa</h2>
+                            <p class="text-xl font-semibold text-white">Parroquia de San Francisco de Asís</p>
+                            <p class="text-slate-300">Miguel Hidalgo Manzana 031, Coacalco de Berriozabal, Méx.</p>
+                            <p class="font-bold text-lg text-white mt-2">25 de Octubre de 2025 - 6:00 PM</p>
+                            <div class="mt-4 flex flex-wrap justify-center gap-2 text-xs">
+                                <a id="gcal-ceremonia" href="#" target="_blank" class="bg-[#001742] text-white font-semibold px-3 py-1.5 rounded-full transition hover:bg-opacity-80">Añadir a Google Calendar</a>
+                                <a id="ical-ceremonia" href="#" class="bg-[#001742] text-white font-semibold px-3 py-1.5 rounded-full transition hover:bg-opacity-80">Añadir a iCal/Outlook</a>
+                            </div>
+                        </div>
+                        <a href="https://maps.app.goo.gl/JKvnxS2CxU49ALxo8" target="_blank" class="inline-block bg-[#e6e9f2] text-[#001742] font-bold py-3 px-8 rounded-full hover:bg-white transition-all duration-300 mt-6">Ver en Mapa</a>
+                    </div>
+                    <!-- Tarjeta Recepción -->
+                    <div data-aos="zoom-in-up" data-aos-delay="100" class="text-center bg-[#0a2d6c] rounded-xl p-8 flex flex-col justify-between shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                        <div>
+                            <i class="fas fa-champagne-glasses text-4xl text-[#e6e9f2] mb-4"></i>
+                            <h2 class="font-great-vibes text-5xl text-white mb-4">Recepción</h2>
+                            <p class="text-xl font-semibold text-white">Salón "Fiesta Colonial"</p>
+                            <p class="text-slate-300">C. Cenzontles 66, Parque Residencial Coacalco, Mex.</p>
+                            <p class="font-bold text-lg text-white mt-2">25 de Octubre de 2025 - 7:30 PM</p>
+                            <div class="mt-4 flex flex-wrap justify-center gap-2 text-xs">
+                                <a id="gcal-recepcion" href="#" target="_blank" class="bg-[#001742] text-white font-semibold px-3 py-1.5 rounded-full transition hover:bg-opacity-80">Añadir a Google Calendar</a>
+                                <a id="ical-recepcion" href="#" class="bg-[#001742] text-white font-semibold px-3 py-1.5 rounded-full transition hover:bg-opacity-80">Añadir a iCal/Outlook</a>
+                            </div>
+                        </div>
+                        <a href="https://maps.app.goo.gl/H4MGff8uYw9d8VwD9" target="_blank" class="inline-block bg-[#e6e9f2] text-[#001742] font-bold py-3 px-8 rounded-full hover:bg-white transition-all duration-300 mt-6">Ver en Mapa</a>
+                    </div>
+                </div>
+                <!-- Código de Vestimenta -->
+                <div class="max-w-md mx-auto mt-16" data-aos="fade-up">
+                    <div class="bg-[#0a2d6c] rounded-xl p-8 text-center shadow-lg">
+                        <h3 class="text-2xl font-semibold text-white tracking-wider uppercase">Código de Vestimenta</h3>
+                        <p class="font-great-vibes text-5xl text-[#e6e9f2] mt-2 mb-4">Formal</p>
+                        <button id="dress-code-btn" class="bg-[#e6e9f2] text-[#001742] font-semibold py-2 px-5 rounded-full hover:bg-white transition-all duration-300 inline-block text-sm">Ver Ejemplos</button>
+                        <p class="text-xs text-slate-300 mt-4"><span class="font-bold">Nota:</span> Agradecemos de corazón no usar el color azul rey.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Itinerario -->
+        <section class="py-24 px-6 bg-[#001742]">
+            <div class="max-w-3xl mx-auto" data-aos="fade-up">
+                <div class="text-center mb-16">
+                    <h2 class="font-great-vibes text-6xl md:text-7xl text-white mb-4">Nuestro Itinerario</h2>
+                    <p class="text-lg text-slate-300">Una noche mágica llena de momentos especiales.</p>
+                </div>
+                <div class="relative">
+                    <div class="timeline-item"><div class="timeline-dot"></div><div class="ml-8 flex-1"><p class="font-semibold text-xl text-white flex items-center gap-3 mb-1"><i class="fa-solid fa-church w-5 text-center text-[#e6e9f2]"></i> 6:00 PM</p><p class="text-slate-300 text-lg">Ceremonia Religiosa</p></div></div>
+                    <div class="timeline-item"><div class="timeline-dot"></div><div class="ml-8 flex-1"><p class="font-semibold text-xl text-white flex items-center gap-3 mb-1"><i class="fa-solid fa-champagne-glasses w-5 text-center text-[#e6e9f2]"></i> 7:30 PM</p><p class="text-slate-300 text-lg">Recepción y Cóctel de Bienvenida</p></div></div>
+                    <div class="timeline-item"><div class="timeline-dot"></div><div class="ml-8 flex-1"><p class="font-semibold text-xl text-white flex items-center gap-3 mb-1"><i class="fa-solid fa-person-walking w-5 text-center text-[#e6e9f2]"></i> 8:20 PM</p><p class="text-slate-300 text-lg">Vals y Primer Baile</p></div></div>
+                    <div class="timeline-item"><div class="timeline-dot"></div><div class="ml-8 flex-1"><p class="font-semibold text-xl text-white flex items-center gap-3 mb-1"><i class="fa-solid fa-utensils w-5 text-center text-[#e6e9f2]"></i> 9:00 PM</p><p class="text-slate-300 text-lg">Cena</p></div></div>
+                    <div class="timeline-item"><div class="timeline-dot"></div><div class="ml-8 flex-1"><p class="font-semibold text-xl text-white flex items-center gap-3 mb-1"><i class="fa-solid fa-cake-candles w-5 text-center text-[#e6e9f2]"></i> 10:00 PM</p><p class="text-slate-300 text-lg">Brindis y Pastel</p></div></div>
+                    <div class="timeline-item"><div class="timeline-dot"></div><div class="ml-8 flex-1"><p class="font-semibold text-xl text-white flex items-center gap-3 mb-1"><i class="fa-solid fa-music w-5 text-center text-[#e6e9f2]"></i> 11:00 PM</p><p class="text-slate-300 text-lg">¡Que inicie la Fiesta!</p></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Galería de Recuerdos -->
+        <section class="py-24 px-6">
+            <div class="max-w-7xl mx-auto text-center">
+                <h2 class="font-great-vibes text-6xl md:text-7xl text-white mb-12">Mis Recuerdos</h2>
+                <div class="relative">
+                    <div id="gallery-container" class="flex overflow-x-auto space-x-4 sm:space-x-6 py-4 scroll-container">
+                        <div class="gallery-thumb flex-shrink-0 w-4/5 sm:w-1/2 md:w-1/3 lg:w-1/4"><img src="fotos/foto1.jpeg" alt="Recuerdo de Ximena 1" class="w-full h-96 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x600/cccccc/FFFFFF?text=Error';"><div class="overlay"><p class="text-white text-lg font-semibold">Ver Foto</p></div></div>
+                        <div class="gallery-thumb flex-shrink-0 w-4/5 sm:w-1/2 md:w-1/3 lg:w-1/4"><img src="fotos/foto2.jpeg" alt="Recuerdo de Ximena 2" class="w-full h-96 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x600/cccccc/FFFFFF?text=Error';"><div class="overlay"><p class="text-white text-lg font-semibold">Ver Foto</p></div></div>
+                        <div class="gallery-thumb flex-shrink-0 w-4/5 sm:w-1/2 md:w-1/3 lg:w-1/4"><img src="fotos/foto3.jpeg" alt="Recuerdo de Ximena 3" class="w-full h-96 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x600/cccccc/FFFFFF?text=Error';"><div class="overlay"><p class="text-white text-lg font-semibold">Ver Foto</p></div></div>
+                        <div class="gallery-thumb flex-shrink-0 w-4/5 sm:w-1/2 md:w-1/3 lg:w-1/4"><img src="fotos/foto4.jpeg" alt="Recuerdo de Ximena 4" class="w-full h-96 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x600/cccccc/FFFFFF?text=Error';"><div class="overlay"><p class="text-white text-lg font-semibold">Ver Foto</p></div></div>
+                        <div class="gallery-thumb flex-shrink-0 w-4/5 sm:w-1/2 md:w-1/3 lg:w-1/4"><img src="fotos/foto5.jpeg" alt="Recuerdo de Ximena 5" class="w-full h-96 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x600/cccccc/FFFFFF?text=Error';"><div class="overlay"><p class="text-white text-lg font-semibold">Ver Foto</p></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mesa de Regalos -->
+        <section class="py-24 px-6 bg-[#001742]">
+            <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
+                <h2 class="font-great-vibes text-6xl md:text-7xl text-white mb-6">Mesa de Regalos</h2>
+                <p class="text-lg max-w-2xl mx-auto text-slate-300">Tu presencia es el mejor regalo, pero si deseas obsequiarme algo, lo más importante para mí sería un regalo monetario para mis futuros proyectos.</p>
+                <div class="mt-12 flex justify-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-[#001742] p-8 rounded-xl shadow-lg text-center w-full max-w-sm">
+                        <i class="fas fa-envelope-open-text text-4xl text-[#e6e9f2] mb-4"></i>
+                        <h3 class="text-xl font-semibold text-white">Lluvia de Sobres</h3>
+                        <p class="mt-2 text-sm text-slate-300">Habrá un espacio especial en la recepción para colocar tu sobre. ¡Muchas gracias!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Confirmación de Asistencia -->
+        <section class="py-24 px-6">
+            <div class="max-w-2xl mx-auto text-center">
+                <div data-aos="fade-up">
+                    <h3 class="font-great-vibes text-6xl text-white">Confirma tu Asistencia</h3>
+                    <p class="mt-4 text-lg text-slate-300">Por favor, confirma antes del 01 de Octubre, 2025. <br>¡Será un honor contar contigo!</p>
+                    <div class="mt-8">
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSefC_Sa0ca9Ak9ATuxm21OiTLf7hNTFuKb5v0ZyKg1CPpVSnA/viewform?usp=sf_link" target="_blank" class="bg-[#e6e9f2] text-[#001742] font-bold py-4 px-10 rounded-full text-lg hover:bg-white transition-transform hover:scale-105 inline-block">Confirmar aquí</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="text-center py-12 bg-[#001742]">
+        <p class="font-great-vibes text-4xl text-white">¡Te espero!</p>
+        <p class="text-sm text-slate-300 mt-2">Ximena | Mis XV Años 2025</p>
+    </footer>
+
+    <!-- Modales -->
+    <div id="gallery-modal" class="modal-container fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center p-4 z-50 hidden" onclick="closeModal('gallery-modal')"><div class="relative w-full max-w-3xl max-h-full" onclick="event.stopPropagation()"><button onclick="closeModal('gallery-modal')" class="absolute -top-2 -right-2 md:top-0 md:-right-12 text-white text-5xl font-bold z-20">×</button><img id="modal-image" src="" alt="Recuerdo en grande" class="max-w-full max-h-[90vh] rounded-lg shadow-lg object-contain"></div></div>
+    <div id="dress-code-modal" class="modal-container fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 z-50 hidden" onclick="closeModal('dress-code-modal')"><div class="bg-white w-full max-w-sm rounded-lg p-6 relative text-center shadow-xl" onclick="event.stopPropagation()"><button onclick="closeModal('dress-code-modal')" class="absolute top-3 right-4 text-[#0a2d6c] hover:text-[#001742] text-2xl font-bold">×</button><h3 class="font-great-vibes text-4xl text-[#001742] mb-4">Ejemplo de Vestimenta</h3><img src="fotos/vestimenta.png" alt="Ejemplo de vestimenta formal" class="w-full h-auto rounded-lg shadow-lg" onerror="this.onerror=null;this.src='https://placehold.co/400x500/cccccc/FFFFFF?text=Error';"><p class="text-sm text-slate-500 mt-4">Se recomienda vestido largo para mujeres y traje formal para hombres.</p></div></div>
+
+    <!-- Música de Fondo -->
+    <audio id="bg-music" loop><source src="assets/audio/fondo.mp3" type="audio/mpeg"></audio>
+    <button id="music-toggle" aria-label="Reproducir o pausar música" class="fixed bottom-5 right-5 bg-[#001742]/50 backdrop-blur-sm text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg z-40 border border-white/20 hover:bg-[#001742]/70 transition">
+        <svg id="play-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+        <svg id="pause-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            AOS.init({ duration: 800, once: true, offset: 50 });
+
+            const countdownDate = new Date("Oct 25, 2025 18:00:00").getTime();
+            const countdownElement = document.getElementById('countdown');
+            if (countdownElement) {
+                const interval = setInterval(() => {
+                    const now = new Date().getTime();
+                    const distance = countdownDate - now;
+                    if (distance < 0) {
+                        clearInterval(interval);
+                        countdownElement.innerHTML = '<div class="text-2xl font-semibold">¡El gran día ha llegado!</div>';
+                        return;
+                    }
+                    document.getElementById('days').innerText = Math.floor(distance / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
+                    document.getElementById('hours').innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
+                    document.getElementById('minutes').innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
+                    document.getElementById('seconds').innerText = Math.floor((distance % (1000 * 60)) / 1000).toString().padStart(2, '0');
+                }, 1000);
+            }
+
+            const dressCodeBtn = document.getElementById('dress-code-btn');
+            if (dressCodeBtn) { dressCodeBtn.addEventListener('click', () => openModal('dress-code-modal')); }
+            
+            document.querySelectorAll('.gallery-thumb').forEach(thumb => {
+                thumb.addEventListener('click', () => {
+                    document.getElementById('modal-image').src = thumb.querySelector('img').src;
+                    openModal('gallery-modal');
+                });
+            });
+            
+            const musicToggle = document.getElementById('music-toggle'), bgMusic = document.getElementById('bg-music');
+            const playIcon = document.getElementById('play-icon'), pauseIcon = document.getElementById('pause-icon');
+            if (musicToggle && bgMusic) {
+                musicToggle.addEventListener('click', () => {
+                    if (bgMusic.paused) { bgMusic.play(); playIcon.classList.add('hidden'); pauseIcon.classList.remove('hidden'); } 
+                    else { bgMusic.pause(); playIcon.classList.remove('hidden'); pauseIcon.classList.add('hidden'); }
+                });
+                bgMusic.play().then(() => { playIcon.classList.add('hidden'); pauseIcon.classList.remove('hidden'); })
+                             .catch(e => console.log("Auto-play de música bloqueado."));
+            }
+            
+            function generateCalendarLinks(id, title, desc, loc, startISO, endISO) {
+                const start = new Date(startISO).toISOString().replace(/-|:|\.\d\d\d/g,"");
+                const end = new Date(endISO).toISOString().replace(/-|:|\.\d\d\d/g,"");
+                const gcalUrl = new URL('https://www.google.com/calendar/render');
+                gcalUrl.searchParams.append('action', 'TEMPLATE');
+                gcalUrl.searchParams.append('text', title);
+                gcalUrl.searchParams.append('dates', `${start}/${end}`);
+                gcalUrl.searchParams.append('details', desc);
+                gcalUrl.searchParams.append('location', loc);
+                document.getElementById(`gcal-${id}`).href = gcalUrl.toString();
+                const ical = ['BEGIN:VCALENDAR','VERSION:2.0','BEGIN:VEVENT',`URL:${document.location.href}`,`DTSTART:${start}`,`DTEND:${end}`,`SUMMARY:${title}`,`DESCRIPTION:${desc}`,`LOCATION:${loc}`,'END:VEVENT','END:VCALENDAR'].join('\n');
+                document.getElementById(`ical-${id}`).href = `data:text/calendar;charset=utf8,${encodeURIComponent(ical)}`;
+                document.getElementById(`ical-${id}`).download = `${id}.ics`;
+            }
+            generateCalendarLinks('ceremonia', 'XV Años de Ximena - Ceremonia', 'Ceremonia religiosa por los XV Años de Ximena. ¡Acompáñanos!', 'Parroquia de San Francisco de Asís, Miguel Hidalgo Manzana 031, Coacalco de Berriozabal, Méx.', '2025-10-25T18:00:00', '2025-10-25T19:00:00');
+            generateCalendarLinks('recepcion', 'XV Años de Ximena - Recepción', '¡A celebrar en la fiesta de XV Años de Ximena!', 'Salón "Fiesta Colonial", C. Cenzontles 66, Parque Residencial Coacalco, Mex.', '2025-10-25T19:30:00', '2026-10-26T03:00:00');
+        });
+        function openModal(id) { document.getElementById(id).classList.remove('hidden'); }
+        function closeModal(id) { document.getElementById(id).classList.add('hidden'); }
+    </script>
+</body>
+
+</html>
