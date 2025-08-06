@@ -186,12 +186,46 @@
                 <p class="text-xl font-semibold text-[#001742]">Con su presencia, mi celebración estará completa.</p>
             </div>
 
-                    <!-- MENSAJE PERSONALIZADO AQUÍ -->
-            <div id="mensaje-personalizado" class="mt-8 mb-4 hidden">
-                <div class="bg-[#e6e9f2] rounded-xl shadow-lg px-6 py-5 max-w-xl mx-auto">
-                    <h3 class="text-2xl font-bold text-[#001742] mb-1" id="familia-nombre"></h3>
-                    <p class="text-lg text-[#001742] mb-2" id="familia-mensaje"></p>
-                    <ul id="familia-invitados" class="text-base text-[#0a2d6c] space-y-1"></ul>
+            <!-- MENSAJE PERSONALIZADO AQUÍ -->
+            <div id="mensaje-personalizado" class="mt-12 hidden" data-aos="fade-up">
+                <div class="bg-[#e6e9f2] rounded-3xl shadow-glow px-8 py-6 max-w-2xl mx-auto text-center">
+
+                    <!-- Título, cantidad y mesa -->
+                    <h3
+                        class="text-5xl md:text-6xl font-great-vibes text-[#001742] mb-4 tracking-wide flex flex-wrap justify-center items-center gap-4">
+                        <span id="familia-nombre">Familia Apellido</span>
+                        <span id="familia-cantidad"
+                            class="text-base md:text-lg font-montserrat text-[#0a2d6c] bg-white/80 px-3 py-1 rounded-full shadow-md">
+                            (0 invitados)
+                        </span>
+                        <span
+                        id="familia-mesa"
+                        class="hidden inline-block text-base md:text-lg font-montserrat
+                                text-[#0a2d6c] bg-white bg-opacity-80 border border-[#0a2d6c]
+                                px-4 py-1 rounded-full shadow-md">
+                        <!-- aquí irá el texto desde JS -->
+                        </span>
+
+
+                    </h3>
+
+                    <!-- Mensaje personalizado -->
+                    <p id="familia-mensaje" class="text-lg md:text-xl text-[#001742] font-light mb-4">
+                        Mensaje emocional aquí
+                    </p>
+
+                    <!-- Lista de invitados -->
+                    <ul id="familia-invitados" class="text-base md:text-lg text-[#0a2d6c] font-medium space-y-1 mb-3">
+                        <!-- Generado por JS -->
+                    </ul>
+
+                    <!-- Ciudad opcional -->
+                    <div id="familia-ciudad"
+                        class="text-sm text-[#001742] italic mt-4 hidden flex justify-center items-center gap-2">
+                        <i class="fas fa-map-marker-alt text-[#0a2d6c]"></i>
+                        <span class="text-[#0a2d6c]"></span>
+                    </div>
+
                 </div>
             </div>
         </section>
@@ -367,6 +401,15 @@
                                 <p class="text-gray-600 text-lg -mt-1">¡Que inicie la Fiesta!</p>
                             </div>
                         </div>
+                            <!-- Nota para papás -->
+                            <div class="mt-12 bg-[#e6e9f2] rounded-xl p-6 shadow-md text-[#001742] text-sm md:text-base font-medium flex items-start gap-4">
+                                <div class="text-2xl text-[#0a2d6c]">
+                                    <i class="fas fa-info-circle"></i>
+                                </div>
+                                <p>
+                                    A la llegada al salón, los <strong>niños menores de 3 años</strong> estarán con sus papás en mesa; los <strong>mayores de 3 años</strong> disfrutarán en la <strong>zona infantil</strong>.
+                                </p>
+                            </div>
                     </div>
                 </div>
             </div>
@@ -440,7 +483,7 @@
                             <i class="fas fa-envelope-open-text text-4xl"></i>
                         </div>
                         <h3 class="text-xl font-semibold text-[#001742]">Lluvia de Sobres</h3>
-                        <p class="mt-2 text-sm text-gray-600">Habrá un espacio especial en la recepción para colocar tu sobre. ¡Muchas gracias!</p>
+                        <p class="mt-2 text-sm text-gray-600">Habrá un espacio especial en la mesa principal para colocar tu sobre. ¡Muchas gracias!</p>
                     </div>
                     <!-- Tarjeta 2 -->
                     <div class="bg-white p-10 rounded-2xl shadow-xl text-center w-full max-w-sm flex flex-col items-center">
@@ -703,7 +746,7 @@
 
     </script>
 
-    <script src="/PruebaBD/codigo.js"></script>
+    <script src="PruebaBD/codigo.js"></script>
 
 
 </body>
