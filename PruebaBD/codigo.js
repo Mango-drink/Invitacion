@@ -29,19 +29,64 @@ document.addEventListener('DOMContentLoaded', () => {
     const interval = setInterval(actualizar, 1000);
   }
 
+  // --- EFECTO PARALLAX HERO (suavizado con rAF + listener pasivo) ---
+  (function () {
+    const hero = document.querySelector('[data-parallax]') || document.querySelector('.hero-bg');
+    if (!hero) return;
+
+    let ticking = false;
+    const onScroll = () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(() => {
+          const offset = window.scrollY * 0.4;
+          hero.style.backgroundPosition = `center ${offset}px`;
+          ticking = false;
+        });
+      }
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll(); // posición inicial
+  })();
+
+  // --- EFECTO MÁQUINA DE ESCRIBIR EN MENSAJE PERSONALIZADO ---
+  function animarMensajePersonalizado() {
+    const mensaje = document.getElementById('familia-mensaje');
+    if (mensaje) {
+      const texto = mensaje.textContent.trim();
+      mensaje.textContent = '';
+      let i = 0;
+      const escribir = () => {
+        if (i < texto.length) {
+          mensaje.textContent += texto.charAt(i);
+          i++;
+          setTimeout(escribir, 40);
+        }
+      };
+      escribir();
+    }
+  }
+
   // --- MODAL VESTIMENTA ---
   function configurarModalVestimenta() {
     const btn = document.getElementById('dress-code-btn');
     if (btn) btn.addEventListener('click', () => openModal('dress-code-modal'));
   }
 
-  // --- GALERÍA DE RECUERDOS (CARRUSEL + MODAL) ---
+  // --- GALERÍA DE RECUERDOS ---
   function configurarGaleria() {
     const galleryContainer = document.getElementById('gallery-container');
     const modal = document.getElementById('gallery-modal');
     const modalImage = document.getElementById('modal-image');
     const closeModalButton = document.getElementById('modal-close');
+    const prevBtn = document.getElementById('prev-image');
+    const nextBtn = document.getElementById('next-image');
+    const thumbs = galleryContainer ? galleryContainer.querySelectorAll('img') : [];
+    let currentIndex = 0;
+
     if (!(galleryContainer && modal && modalImage && closeModalButton)) return;
+
     // Duplicar para scroll infinito
     Array.from(galleryContainer.children).forEach(item => {
       galleryContainer.appendChild(item.cloneNode(true));
@@ -59,14 +104,31 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     galleryContainer.addEventListener('mouseenter', () => { isScrolling = false; });
     galleryContainer.addEventListener('mouseleave', () => { isScrolling = true; });
+
+    // Abrir modal
     galleryContainer.addEventListener('click', (event) => {
       const thumb = event.target.closest('.gallery-thumb');
       if (thumb) {
+        currentIndex = Array.from(thumbs).indexOf(thumb.querySelector('img'));
         modalImage.src = thumb.querySelector('img').src;
         openModal('gallery-modal');
         isScrolling = false;
       }
     });
+
+    // Navegación con flechas
+    if (prevBtn && nextBtn) {
+      prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + thumbs.length) % thumbs.length;
+        modalImage.src = thumbs[currentIndex].src;
+      });
+      nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % thumbs.length;
+        modalImage.src = thumbs[currentIndex].src;
+      });
+    }
+
+    // Cerrar modal
     closeModalButton.addEventListener('click', () => {
       closeModal('gallery-modal');
       modalImage.src = "";
@@ -79,6 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
         isScrolling = true;
       }
     });
+
     isScrolling = true;
     continuousScroll();
   }
@@ -119,7 +182,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- ENLACES DE CALENDARIO ---
   function agregarEnlacesCalendario() {
     function formatDateICS(dateStr) {
-      // Devuelve YYYYMMDDTHHMMSS (hora local, sin Z)
       const d = new Date(dateStr);
       return (
         d.getFullYear().toString() +
@@ -169,8 +231,6 @@ document.addEventListener('DOMContentLoaded', () => {
     );
   }
 
-
-
   // --- MODALES GENERALES ---
   window.openModal = function (id) {
     document.getElementById(id).classList.remove('hidden');
@@ -181,47 +241,81 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.style.overflow = 'auto';
   };
 
-  // --- MODAL DE CÓDIGO PERSONALIZADO ---
+  // --- MODAL DE CÓDIGO PERSONALIZADO (Seres queridos + invitados + mensaje) ---
   function configurarAccesoCodigo() {
     const modal = document.getElementById('codigo-modal');
     const input = document.getElementById('codigo-input');
     const btn = document.getElementById('codigo-btn');
     const errorMsg = document.getElementById('codigo-error');
+
     const mensajeContainer = document.getElementById('mensaje-personalizado');
-    const nombreFamilia = document.getElementById('familia-nombre');
+    const tituloEl = document.getElementById('familia-nombre');
     const cantidadInvitados = document.getElementById('familia-cantidad');
     const mensajeFamilia = document.getElementById('familia-mensaje');
-    // ... agrega si quieres los de mesa, ciudad, lista de invitados, etc.
 
-    // Ejemplo "base de datos" local
+    if (!(modal && input && btn && mensajeContainer && tituloEl && cantidadInvitados && mensajeFamilia)) return;
+
+    // Asegurar UL para chips (si no existe, lo creamos antes del mensaje)
+    let listaInvitadosEl = document.getElementById('lista-invitados');
+    if (!listaInvitadosEl) {
+      listaInvitadosEl = document.createElement('ul');
+      listaInvitadosEl.id = 'lista-invitados';
+      listaInvitadosEl.style.display = 'flex';
+      listaInvitadosEl.style.flexWrap = 'wrap';
+      listaInvitadosEl.style.gap = '8px';
+      listaInvitadosEl.style.justifyContent = 'center';
+      mensajeFamilia.parentElement.insertBefore(listaInvitadosEl, mensajeFamilia);
+    }
+
+    // “Base de datos” local de ejemplo
     const codigosInvitacion = {
-      "FAMLOPEZ": {
-        nombre: "Familia López",
-        mensaje: "Querida familia López, me emociona profundamente contar con su presencia en este día tan especial. ¡Gracias por acompañarme!",
-        invitados: ["Jorge López", "Martha González", "Andrea López", "Gabriel López"],
-        ciudad: "Coacalco, Estado de México",
-        mesa: 5
+      "FAMGARCIA": {
+        invitados: ["1", "Martha González", "Andrea López", "Gabriel López"],
+        mensaje: "Gracias por acompañarme en este día tan especial. ¡Su cariño es parte de mi alegría!",
       },
-      // ... más familias ...
+      // Agrega más códigos aquí...
     };
 
-    // Mostrar el modal siempre al inicio
+    // Mostrar modal al inicio
     modal.classList.remove('hidden');
     document.body.style.overflow = 'hidden';
 
-    // Función que muestra los datos de la familia
+    function renderChips(nombres = []) {
+      listaInvitadosEl.innerHTML = '';
+      nombres.forEach(nombre => {
+        const li = document.createElement('li');
+        li.textContent = nombre;
+        li.style.background = '#ffffffcc';
+        li.style.color = '#0a2d6c';
+        li.style.border = '1px solid #dbe1f1';
+        li.style.padding = '6px 10px';
+        li.style.borderRadius = '9999px';
+        li.style.fontSize = '0.9rem';
+        li.style.boxShadow = '0 1px 2px rgba(0,0,0,.05)';
+        listaInvitadosEl.appendChild(li);
+      });
+    }
+
     function mostrarDatosFamilia(datos) {
-      nombreFamilia.textContent = datos.nombre;
-      cantidadInvitados.textContent = `${datos.invitados.length} invitado${datos.invitados.length !== 1 ? 's' : ''}`;
-      mensajeFamilia.textContent = datos.mensaje;
-      // ... aquí puedes agregar los demás campos si quieres
+      // Título fijo
+      tituloEl.textContent = 'Seres Queridos';
+      // Cantidad
+      const n = (datos.invitados || []).length;
+      cantidadInvitados.textContent = `${n} invitado${n !== 1 ? 's' : ''}`;
+      // Lista = renderChips(datos.invitados || []);
+      // Mensaje
+      mensajeFamilia.textContent = datos.mensaje || '';
+
+      // Mostrar / cerrar modal
       mensajeContainer.classList.remove('hidden');
       modal.classList.add('hidden');
       errorMsg.classList.add('hidden');
       document.body.style.overflow = 'auto';
+
+      // Animación de escritura
+      animarMensajePersonalizado();
     }
 
-    // Verificar código
     function verificarCodigo() {
       const codigo = input.value.trim().toUpperCase();
       const datos = codigosInvitacion[codigo];
@@ -231,10 +325,17 @@ document.addEventListener('DOMContentLoaded', () => {
         errorMsg.classList.remove('hidden');
       }
     }
+
     btn.addEventListener('click', verificarCodigo);
-    input.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter') verificarCodigo();
-    });
+    input.addEventListener('keydown', (e) => { if (e.key === 'Enter') verificarCodigo(); });
+
+    // Si llega con ?code=FAMXXXX
+    const params = new URLSearchParams(location.search);
+    const codeParam = (params.get('code') || '').toUpperCase();
+    if (codeParam && codigosInvitacion[codeParam]) {
+      input.value = codeParam;
+      verificarCodigo();
+    }
   }
 
   // --- LLAMADA A TODAS LAS FUNCIONES ---
@@ -245,3 +346,13 @@ document.addEventListener('DOMContentLoaded', () => {
   agregarEnlacesCalendario();
   configurarAccesoCodigo();
 });
+
+// Helpers globales para modales (si no existen ya en tu HTML)
+function openModal(id) {
+  document.getElementById(id)?.classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal(id) {
+  document.getElementById(id)?.classList.add('hidden');
+  document.body.style.overflow = 'auto';
+}

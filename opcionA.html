@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,21 +11,20 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- AOS (Animate on Scroll) -->
+    <!-- AOS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    <!-- Font Awesome para Iconos -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <!-- Estilos Internos para Mejoras Visuales -->
+    <!-- CSS -->
     <link rel="stylesheet" href="opcionA.css">
 </head>
 
 <body class="bg-[#f5f7fa] text-gray-700 font-montserrat">
+
 
     <!-- Modal de acceso por código -->
     <div id="codigo-modal" class="fixed inset-0 bg-black bg-opacity-100 flex items-center justify-center z-50">
@@ -39,8 +37,8 @@
         </div>
     </div>
 
-    <!-- Encabezado Principal (Hero Section) -->
-    <header class="hero-bg text-white min-h-screen flex flex-col items-center justify-center text-center p-6 relative">
+    <!-- Hero con efecto parallax -->
+    <header class="hero-bg text-white min-h-screen flex flex-col items-center justify-center text-center p-6 relative" data-parallax>
         <div data-aos="zoom-in" data-aos-duration="1500">
             <h2 class="text-2xl md:text-3xl tracking-widest uppercase font-light">Mis XV Años</h2>
             <h1 class="font-great-vibes text-8xl md:text-9xl my-2 text-white"
@@ -48,7 +46,7 @@
             <h3 class="text-2xl md:text-3xl font-light mt-4">25 de Octubre de 2025</h3>
         </div>
 
-        <!-- Cuenta Regresiva -->
+        <!-- Cuenta regresiva -->
         <div id="countdown" class="mt-16 w-full max-w-2xl" data-aos="fade-up" data-aos-delay="500">
             <div class="grid grid-cols-4 gap-4 text-center text-white">
                 <div>
@@ -85,48 +83,44 @@
 
             <!-- MENSAJE PERSONALIZADO AQUÍ -->
             <div id="mensaje-personalizado" class="mt-12 hidden" data-aos="fade-up">
-            <div class="bg-[#e6e9f2] rounded-3xl shadow-glow px-8 py-6 max-w-2xl mx-auto text-center">
+                <div class="bg-[#e6e9f2] rounded-3xl shadow-glow px-8 py-6 max-w-2xl mx-auto text-center">
 
-                <!-- Título -->
-                <h3 class="text-5xl md:text-6xl font-great-vibes text-[#001742] tracking-wide">
-                <span id="familia-nombre">Familia Apellido</span>
-                </h3>
+                    <!-- Título fijo -->
+                    <h3 id="familia-nombre"
+                        class="text-5xl md:text-6xl font-great-vibes text-[#001742] tracking-wide">Seres Queridos
+                    </h3>
 
-                <!-- Badge de cantidad centrado -->
-                <div class="mt-2 flex justify-center">
-                <span
-                    id="familia-cantidad"
-                    class="text-base md:text-lg font-montserrat text-[#0a2d6c] bg-white/80 px-3 py-1 rounded-full shadow-md inline-block">
-                    0 invitados
-                </span>
+                    <!-- Badge de cantidad -->
+                    <div class="mt-2 flex justify-center">
+                    <span id="familia-cantidad"
+                        class="text-base md:text-lg font-montserrat text-[#0a2d6c] bg-white/80 px-3 py-1 rounded-full shadow-md inline-block">
+                        0 invitados
+                    </span>
+                    </div>
+
+                    <!-- Mensaje personalizado -->
+                    <p id="familia-mensaje" class="mt-6 text-lg md:text-xl text-[#001742] font-light">
+                    Mensaje emocional aquí
+                    </p>
+
                 </div>
-
-                <!-- Mensaje personalizado -->
-                <p id="familia-mensaje" class="mt-4 text-lg md:text-xl text-[#001742] font-light">
-                Mensaje emocional aquí
-                </p>
-
-            </div>
-            </div>
-
             </div>
         </section>
 
         <!-- Presentación de la Familia -->
         <section class="py-24 px-6 bg-[#f5f7fa]">
             <div class="max-w-5xl mx-auto text-center" data-aos="fade-up">
-                <h2 class="font-great-vibes text-6xl md:text-7xl text-[#001742] mb-16">Con el Amor de mi Familia</h2>
+                <h2 class="font-great-vibes text-6xl md:text-7xl text-[#001742] mb-16">Con el amor de mi familia</h2>
                 <div class="grid md:grid-cols-2 gap-12">
                     <div data-aos="fade-right" class="text-center">
                         <h3 class="text-2xl font-semibold mb-4 tracking-wider uppercase text-[#001742]">Mis Padres</h3>
-                        <p class="text-2xl font-light text-gray-600">Guillermo Rafael Pulido Arenas.</p>
+                        <p class="text-2xl font-light text-gray-600">Guillermo Rafael Pulido Arenas</p>
                         <p class="text-2xl font-light text-gray-600">& Adriana Rangel Rangel.</p>
                     </div>
                     <div data-aos="fade-left" class="text-center">
-                        <h3 class="text-2xl font-semibold mb-4 tracking-wider uppercase text-[#001742]">Mis Padrinos
+                        <h3 class="text-2xl font-semibold mb-4 tracking-wider uppercase text-[#001742]">Mi madrina
                         </h3>
                         <p class="text-2xl font-light text-gray-600">María de Jesús Rangel Rivera.</p>
-                        <p class="text-2xl font-light text-gray-600">& Héctor Alberto Sandoval Rangel.</p>
                     </div>
                 </div>
             </div>
@@ -137,7 +131,7 @@
             <div class="max-w-6xl mx-auto">
                 <div class="text-center mb-16" data-aos="fade-up">
                     <h2 class="font-great-vibes text-6xl md:text-7xl text-[#001742] mb-4">Acompáñame a Celebrar</h2>
-                    <p class="text-lg text-gray-600">Estos son los lugares donde escribiremos esta nueva historia.</p>
+                    <p class="text-lg text-gray-600">Estos serán los recintos donde escribiremos esta nueva historia.</p>
                 </div>
                 <div class="grid md:grid-cols-2 gap-8 items-stretch">
                     <!-- Tarjeta Ceremonia -->
@@ -190,7 +184,7 @@
                     <div class="bg-[#f5f7fa] rounded-xl p-8 text-center shadow-lg">
                         <h3 class="text-2xl font-semibold text-[#001742] tracking-wider uppercase">Código de Vestimenta
                         </h3>
-                        <p class="font-great-vibes text-5xl text-[#0a2d6c] mt-2 mb-4">Formal</p>
+                        <p class="font-great-vibes text-5xl text-[#0a2d6c] mt-2 mb-4">Etiqueta</p>
                         <button id="dress-code-btn"
                             class="bg-[#0a2d6c] text-white font-semibold py-2 px-5 rounded-full hover:bg-[#001742] transition-all duration-300 inline-block text-sm">Ver
                             Ejemplos</button>
@@ -232,7 +226,7 @@
                             </div>
                             <div>
                                 <p class="font-bold text-xl text-[#001742] flex items-center gap-3 mb-1">7:30 PM</p>
-                                <p class="text-gray-600 text-lg -mt-1">Recepción y Cóctel de Bienvenida</p>
+                                <p class="text-gray-600 text-lg -mt-1">Entrada al salón</p>
                             </div>
                         </div>
                         <!-- 3 -->
@@ -244,7 +238,7 @@
                             </div>
                             <div>
                                 <p class="font-bold text-xl text-[#001742] flex items-center gap-3 mb-1">8:20 PM</p>
-                                <p class="text-gray-600 text-lg -mt-1">Vals y Primer Baile</p>
+                                <p class="text-gray-600 text-lg -mt-1">Primer Baile</p>
                             </div>
                         </div>
                         <!-- 4 -->
@@ -299,56 +293,51 @@
 
 
         <!-- Galería de Recuerdos -->
-        <section class="py-24 px-6 section-bg">
-            <div class="max-w-6xl mx-auto text-center">
-                <h2 class="font-great-vibes text-6xl md:text-7xl title-cursive mb-12">Mis Recuerdos</h2>
-                <div id="gallery-container" class="flex overflow-x-auto space-x-6 py-4 scroll-container"
-                    style="scroll-behavior: auto;">
-                    <div class="gallery-thumb flex-shrink-0 w-64 rounded-lg shadow-lg cursor-pointer">
-                        <img src="fotos/foto1.jpeg" alt="Recuerdo de Ximena 1"
-                            class="w-full h-80 object-cover rounded-lg">
-                    </div>
-                    <div class="gallery-thumb flex-shrink-0 w-64 rounded-lg shadow-lg cursor-pointer">
-                        <img src="fotos/foto2.jpeg" alt="Recuerdo de Ximena 2"
-                            class="w-full h-80 object-cover rounded-lg">
-                    </div>
-                    <div class="gallery-thumb flex-shrink-0 w-64 rounded-lg shadow-lg cursor-pointer">
-                        <img src="fotos/foto3.jpeg" alt="Recuerdo de Ximena 3"
-                            class="w-full h-80 object-cover rounded-lg">
-                    </div>
-                    <div class="gallery-thumb flex-shrink-0 w-64 rounded-lg shadow-lg cursor-pointer">
-                        <img src="fotos/foto4.jpeg" alt="Recuerdo de Ximena 4"
-                            class="w-full h-80 object-cover rounded-lg">
-                    </div>
-                    <div class="gallery-thumb flex-shrink-0 w-64 rounded-lg shadow-lg cursor-pointer">
-                        <img src="fotos/foto5.jpeg" alt="Recuerdo de Ximena 5"
-                            class="w-full h-80 object-cover rounded-lg">
-                    </div>
-                    <div class="gallery-thumb flex-shrink-0 w-64 rounded-lg shadow-lg cursor-pointer">
-                        <img src="fotos/foto6.jpeg" alt="Recuerdo de Ximena 6"
-                            class="w-full h-80 object-cover rounded-lg">
-                    </div>
-                    <div class="gallery-thumb flex-shrink-0 w-64 rounded-lg shadow-lg cursor-pointer">
-                        <img src="fotos/foto7.jpeg" alt="Recuerdo de Ximena 7"
-                            class="w-full h-80 object-cover rounded-lg">
-                    </div>
-                    <div class="gallery-thumb flex-shrink-0 w-64 rounded-lg shadow-lg cursor-pointer">
-                        <img src="fotos/foto8.jpeg" alt="Recuerdo de Ximena 8"
-                            class="w-full h-80 object-cover rounded-lg">
-                    </div>
+    <section class="py-24 px-6 section-bg">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="font-great-vibes text-6xl md:text-7xl title-cursive mb-12">Mis Recuerdos</h2>
+            <div id="gallery-container" class="flex overflow-x-auto space-x-6 py-4 scroll-container" style="scroll-behavior: auto;">
+                <div class="gallery-thumb flex-shrink-0 w-64 rounded-lg shadow-lg cursor-pointer">
+                    <img loading="lazy" src="fotos/foto1.jpeg" alt="Recuerdo de Ximena 1" class="w-full h-80 object-cover rounded-lg">
                 </div>
-
-                <!-- Modal para la foto ampliada -->
-                <div id="gallery-modal"
-                    class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 hidden">
-                    <button id="modal-close"
-                        class="absolute top-4 right-8 text-white text-5xl font-bold z-60">×</button>
-                    <img id="modal-image" src="" alt="Recuerdo ampliado"
-                        class="max-h-[90vh] max-w-full rounded-lg shadow-2xl border-4 border-white">
+                <div class="gallery-thumb flex-shrink-0 w-64 rounded-lg shadow-lg cursor-pointer">
+                    <img loading="lazy" src="fotos/foto2.jpeg" alt="Recuerdo de Ximena 2"
+                        class="w-full h-80 object-cover rounded-lg">
+                </div>
+                <div class="gallery-thumb flex-shrink-0 w-64 rounded-lg shadow-lg cursor-pointer">
+                    <img loading="lazy" src="fotos/foto3.jpeg" alt="Recuerdo de Ximena 3"
+                        class="w-full h-80 object-cover rounded-lg">
+                </div>
+                <div class="gallery-thumb flex-shrink-0 w-64 rounded-lg shadow-lg cursor-pointer">
+                    <img loading="lazy" src="fotos/foto4.jpeg" alt="Recuerdo de Ximena 4"
+                        class="w-full h-80 object-cover rounded-lg">
+                </div>
+                <div class="gallery-thumb flex-shrink-0 w-64 rounded-lg shadow-lg cursor-pointer">
+                    <img loading="lazy" src="fotos/foto5.jpeg" alt="Recuerdo de Ximena 5"
+                        class="w-full h-80 object-cover rounded-lg">
+                </div>
+                <div class="gallery-thumb flex-shrink-0 w-64 rounded-lg shadow-lg cursor-pointer">
+                    <img loading="lazy" src="fotos/foto6.jpeg" alt="Recuerdo de Ximena 6"
+                        class="w-full h-80 object-cover rounded-lg">
+                </div>
+                <div class="gallery-thumb flex-shrink-0 w-64 rounded-lg shadow-lg cursor-pointer">
+                    <img loading="lazy" src="fotos/foto7.jpeg" alt="Recuerdo de Ximena 7"
+                        class="w-full h-80 object-cover rounded-lg">
+                </div>
+                <div class="gallery-thumb flex-shrink-0 w-64 rounded-lg shadow-lg cursor-pointer">
+                    <img loading="lazy" src="fotos/foto8.jpeg" alt="Recuerdo de Ximena 8"
+                        class="w-full h-80 object-cover rounded-lg">
                 </div>
             </div>
 
-        </section>
+            <div id="gallery-modal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 hidden">
+                <button id="prev-image" class="absolute left-5 text-white text-4xl font-bold">❮</button>
+                <img id="modal-image" src="" alt="Recuerdo ampliado" class="max-h-[90vh] max-w-full rounded-lg shadow-2xl border-4 border-white">
+                <button id="next-image" class="absolute right-5 text-white text-4xl font-bold">❯</button>
+                <button id="modal-close" class="absolute top-4 right-8 text-white text-5xl font-bold">×</button>
+            </div>
+        </div>
+    </section>
 
 
         <!-- Mosaico de Fotos -->
@@ -361,14 +350,13 @@
                 </div>
             </div>
         </section>
-
         
         <!-- Mesa de Regalos -->
         <section class="py-24 px-6 bg-[#f5f7fa]">
             <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
                 <h2 class="font-great-vibes text-6xl md:text-7xl text-[#001742] mb-6">Mesa de Regalos</h2>
                 <p class="text-lg max-w-2xl mx-auto text-gray-600">
-                    Tu presencia es el mejor regalo, pero si deseas obsequiarme algo, lo más importante para mí sería un regalo monetario para mis futuros proyectos.
+                    Si deseas tener un detalle, podrás elegir un regalo que te recuerde a mi o dejar tu presente en el buzón de sobres. Lo más importante es que me acompañes en este día especial.
                 </p>
                 <div class="mt-12 flex flex-wrap justify-center gap-8" data-aos="fade-up" data-aos-delay="200">
                     <!-- Tarjeta 1 -->
@@ -402,7 +390,8 @@
                         un honor contar contigo!</p>
                     <div class="mt-8">
                         <a href="https://docs.google.com/forms/d/e/1FAIpQLSefC_Sa0ca9Ak9ATuxm21OiTLf7hNTFuKb5v0ZyKg1CPpVSnA/viewform?usp=sf_link"
-                            target="_blank"
+                            target="_blank" 
+                            data-skip-video
                             class="bg-[#0a2d6c] text-white font-bold py-4 px-10 rounded-full text-lg hover:bg-[#001742] transition-transform hover:scale-105 inline-block">Confirmar
                             aquí</a>
                     </div>
@@ -414,19 +403,12 @@
     <!-- Pie de página -->
     <footer class="text-center py-12 bg-[#f5f7fa]">
         <p class="font-great-vibes text-4xl text-[#001742]">¡Te espero!</p>
-        <p class="text-sm text-gray-500 mt-2">Ximena | Mis XV Años 2025</p>
+        <p class="text-sm text-gray-500 mt-2">Ximena | 25 de Octubre de 2025</p>
     </footer>
 
-    <!-- Modales -->
-    <div id="gallery-modal"
-        class="modal-container fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center p-4 z-50 hidden"
-        onclick="closeModal('gallery-modal')">
-        <div class="relative w-full max-w-3xl max-h-full" onclick="event.stopPropagation()"><button
-                onclick="closeModal('gallery-modal')"
-                class="absolute -top-2 -right-2 md:top-0 md:-right-12 text-white text-5xl font-bold z-20">×</button><img
-                id="modal-image" src="" alt="Recuerdo en grande"
-                class="max-w-full max-h-[90vh] rounded-lg shadow-lg object-contain"></div>
     </div>
+
+    <!-- Modal de Código de Vestimenta -->
     <div id="dress-code-modal"
         class="modal-container fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 z-50 hidden"
         onclick="closeModal('dress-code-modal')">
